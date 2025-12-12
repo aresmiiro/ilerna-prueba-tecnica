@@ -1,0 +1,22 @@
+// FONTS
+@use './base/fonts';
+
+// BASE
+@use './base/reset' as *;
+@use './base/typography' as *;
+@use './base/grid' as *;
+
+
+// COMPONENTS - modules
+@use './components/modules/header' as *;
+@use './components/modules/footer' as *;
+@use './components/modules/modal' as *;
+@use './components/modules/modal' as *;
+@use './components/modules/forms/form-card' as *;
+@use './components/modules/hero/hero-landing.scss' as *;
+
+
+// COMPONENTS - UI elements
+@use './components/ui/buttons/button' as *;
+@use './components/ui/inputs/input' as *;
+@use './components/ui/inputs/select' as *;

@@ -1,0 +1,58 @@
+// src/styles/components/_header.scss
+
+@use '../../abstracts/variables' as v;
+@use '../../abstracts/mixins' as m;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: v.$color-bg-card;
+  box-shadow: 0px 4px 8px 0px rgba(v.$black, 0.2);
+  z-index: v.$z-index-header;
+  height: 80px;
+
+  @include m.mobile {
+    height: 60px;
+  }
+
+  &__container {
+    @include m.container;
+    height: 100%;
+    @include m.flex-between;
+  }
+
+  &__logo {
+    font-size: 28px;
+    font-weight: v.$font-weight-bold;
+    color: v.$color-text-primary;
+    font-family: v.$font-primary;
+
+    @include m.mobile {
+      font-size: 22px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 40px;
+
+    @include m.mobile {
+      display: none;
+    }
+  }
+
+  &__link {
+    font-size: v.$font-size-base;
+    color: v.$color-text-primary;
+    text-decoration: none;
+    font-weight: v.$font-weight-medium;
+    font-family: v.$font-primary;
+    transition: color v.$transition-base;
+
+    &:hover {
+      color: v.$color-primary-dark;
+    }
+  }
+}

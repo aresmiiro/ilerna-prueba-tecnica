@@ -1,0 +1,36 @@
+@use '../../../abstracts/variables' as v;
+@use '../../../abstracts/mixins' as m;
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-1;
+
+  &__label {
+    font-size: v.$font-size-sm;
+    font-weight: v.$font-weight-medium;
+    color: v.$color-text-primary;
+    margin-bottom: v.$spacing-1;
+  }
+
+  &__field {
+    @include m.input-base;
+
+    &--error {
+      @include m.input-error;
+    }
+  }
+
+  &__error {
+    font-size: v.$font-size-xs;
+    color: v.$color-error;
+    margin-top: v.$spacing-1;
+    font-weight: v.$font-weight-medium;
+  }
+
+  &__help {
+    font-size: v.$font-size-xs;
+    color: v.$color-text-light;
+    margin-top: v.$spacing-1;
+  }
+}

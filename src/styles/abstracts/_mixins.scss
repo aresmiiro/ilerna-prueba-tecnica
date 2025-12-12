@@ -1,0 +1,162 @@
+// src/styles/abstracts/_mixins.scss
+
+@use './variables' as v;
+
+// ============================================
+// RESPONSIVE (BREAKPOINTS)
+// ============================================
+
+@mixin mobile {
+  @media (max-width: #{v.$breakpoint-mobile - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{v.$breakpoint-mobile}) and (max-width: #{v.$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{v.$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop-large {
+  @media (min-width: #{v.$breakpoint-desktop-large}) {
+    @content;
+  }
+}
+
+// Genérico
+@mixin respond-to($breakpoint) {
+  @if map-has-key(v.$breakpoints, $breakpoint) {
+    $value: map-get(v.$breakpoints, $breakpoint);
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$breakpoint} no existe";
+  }
+}
+
+// ============================================
+// LAYOUT
+// ============================================
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Contenedor de grid
+@mixin container {
+  width: 100%;
+  max-width: v.$grid-container-max-width;
+  margin: 0 auto;
+  padding: 0 v.$spacing-4;
+
+  @include desktop {
+    padding: 0 ;
+  }
+}
+
+// ============================================
+// GRID DE 12 COLUMNAS
+// ============================================
+
+@mixin grid-12 {
+  display: grid;
+  grid-template-columns: repeat(v.$grid-columns, 1fr);
+  gap: v.$grid-gap;
+}
+
+@mixin grid-column($columns, $start: auto) {
+  grid-column: span $columns;
+
+  @if $start != auto {
+    grid-column-start: $start;
+  }
+}
+
+// ============================================
+// COMPONENTES
+// ============================================
+
+@mixin input-base {
+  width: 100%;
+  height: v.$input-height;
+  padding: v.$input-padding-y v.$input-padding-x;
+  border: v.$border-width-base solid v.$color-border;
+  border-radius: v.$radius-base;
+  font-size: v.$font-size-base;
+  font-family: v.$font-primary;
+  font-weight: v.$font-weight-regular;
+  color: v.$color-text-secondary;
+  background: v.$color-bg-card;
+  transition: all v.$transition-base v.$easing-out;
+
+  &::placeholder {
+    color: v.$color-text-secondary;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: v.$color-border-focus;
+    box-shadow: 0 0 0 3px rgba(v.$color-primary-dark, 0.1);
+  }
+}
+
+@mixin input-error {
+  border-color: v.$color-error;
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(v.$color-error, 0.1);
+  }
+}
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: v.$button-height;
+  padding: v.$button-padding-y v.$button-padding-x;
+  border: v.$border-width-thick solid v.$black;
+  border-radius: v.$radius-pill;
+  font-size: v.$font-size-lg;
+  font-weight: v.$font-weight-bold;
+  font-family: v.$font-primary;
+  cursor: pointer;
+  transition: all v.$transition-base v.$easing-out;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+@mixin card {
+  background: v.$color-bg-card;
+  border-radius: v.$radius-lg;
+  box-shadow: v.$shadow-card;
+  padding: v.$form-card-padding;
+}

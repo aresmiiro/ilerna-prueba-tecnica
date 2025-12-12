@@ -1,0 +1,146 @@
+
+@use '../../../abstracts/variables' as v;
+@use '../../../abstracts/mixins' as m;
+
+
+.hero {
+  min-height: calc(100vh - 80px);
+  background: v.$color-bg-primary;
+  padding: v.$spacing-16 0;
+  position: relative;
+  overflow: hidden;
+
+  @include m.mobile {
+    padding: v.$spacing-10 0;
+  }
+
+  &__container {
+    @include m.container;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__breadcrumb {
+    font-size: v.$font-size-base;
+    color: #979797;
+    margin-bottom: v.$spacing-8;
+    font-family: v.$font-primary;
+  }
+
+  &__grid {
+    @include m.grid-12;
+    align-items: start;
+    gap: v.$grid-gap;
+
+    @include m.mobile {
+      grid-template-columns: 1fr;
+      gap: v.$spacing-8;
+    }
+  }
+
+  // Contenido: columnas 1-7
+  &__content {
+    grid-column: 1 / 8;
+    position: relative;
+
+    @include m.mobile {
+      grid-column: 1 / -1;
+    }
+  }
+
+  // FormCard: columnas 9-12 (offset de 1 columna = empieza en la 9)
+  &__form-wrapper {
+    grid-column: 9 / 13; // Empieza en la columna 9, termina en la 12 (4 columnas)
+    display: flex;
+    justify-content: flex-end;
+
+    @include m.mobile {
+      grid-column: 1 / -1;
+      justify-content: center;
+    }
+  }
+
+  &__title {
+    margin-bottom: v.$spacing-8;
+    position: relative;
+ 
+    @include m.mobile {
+      margin-bottom: v.$spacing-6;
+    }
+    &-decoration {
+      position: relative;
+      display: inline-block;
+      z-index: 0;
+      &::before{
+        content: "";
+        position: absolute;
+        bottom:12px;
+        display: inline-block;
+        width: 104%;
+        height: 30px;
+        background-color: #bfeaf1;
+        border-radius: 20px;
+        z-index: -1;
+        left: -5px;
+
+      }
+    }
+    
+  }
+
+  &__description {
+    font-size: v.$font-size-md;
+    line-height: v.$line-height-normal;
+    color: v.$color-text-primary;
+    margin-bottom: v.$spacing-6;
+    font-family: v.$font-primary;
+
+    strong {
+      font-weight: v.$font-weight-bold;
+    }
+
+    @include m.mobile {
+      font-size: v.$font-size-base;
+    }
+  }
+
+  &__conditions-link {
+    background: none;
+    border: none;
+    color: v.$color-text-primary;
+    font-size: v.$font-size-md;
+    font-weight: v.$font-weight-medium;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    font-family: v.$font-primary;
+    transition: color v.$transition-base;
+    display: inline-block;
+    margin-top: v.$spacing-4;
+
+    &:hover {
+      color: v.$color-primary-dark;
+    }
+
+    @include m.mobile {
+      font-size: v.$font-size-base;
+    }
+  }
+
+  // Flecha decorativa
+  &__arrow {
+   position: absolute;
+  right: -60px;      // ajusta según diseño
+  bottom: -60px;    // ajusta según diseño    // ancho de la flecha
+  z-index: 0;
+
+  img {
+    display: block;
+    transform: rotate(-15deg); // igual que en el diseño
+  }
+
+  @include m.mobile {
+    display: none;
+    }
+  }
+}

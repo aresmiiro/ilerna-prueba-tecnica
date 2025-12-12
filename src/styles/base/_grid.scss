@@ -1,0 +1,43 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *; 
+
+/* ============================================
+   SISTEMA DE GRID DE 12 COLUMNAS
+   ============================================ */
+
+.container {
+  @include container;
+}
+
+.grid {
+  @include grid-12;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Clases de utilidad para columnas
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    @include grid-column($i);
+  }
+
+  .col-mobile-#{$i} {
+    @include mobile {
+      @include grid-column($i);
+    }
+  }
+
+  .col-tablet-#{$i} {
+    @include tablet {
+      @include grid-column($i);
+    }
+  }
+
+  .col-desktop-#{$i} {
+    @include desktop {
+      @include grid-column($i);
+    }
+  }
+}

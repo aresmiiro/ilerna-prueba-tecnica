@@ -1,0 +1,60 @@
+// src/styles/base/_typography.scss
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *; 
+
+body {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+  color: $color-text-primary;
+  font-weight: $font-weight-regular;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  color: $color-text-primary;
+  margin: 0;
+}
+
+h1 {
+  font-size: $font-size-2xl;
+  
+  @include mobile {
+    font-size: 42px;
+  }
+}
+
+h2 {
+  font-size: $font-size-xl;
+  
+  @include mobile {
+    font-size: 28px;
+  }
+}
+
+p {
+  font-family: $font-primary;
+  font-size: $font-size-md;
+  line-height: $line-height-normal;
+  color: $color-text-primary;
+  margin: 0;
+}
+
+strong {
+  font-weight: $font-weight-bold;
+}
+
+// Clases de utilidad
+.font-primary {
+  font-family: $font-primary;
+}
+
+.font-secondary {
+  font-family: $font-secondary;
+}
+
+.font-tertiary {
+  font-family: $font-tertiary;
+}

@@ -1,0 +1,59 @@
+// src/styles/components/forms/_form-card.scss
+
+@use '../../../abstracts/variables' as v;
+@use '../../../abstracts/mixins' as m;
+
+.form-card {
+  @include m.card;
+  width: 100%;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -40px;
+    width: 125%;
+    height: 100%;
+    background-image: url('/assets/images/form-decoration.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(4deg);
+    pointer-events: none;
+    opacity: 0.5;
+    z-index: -1;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    margin-bottom: v.$spacing-8;
+    @include m.mobile {
+      font-size: 28px;
+    }
+  }
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: v.$spacing-form-gap;
+    margin-bottom: v.$spacing-6;
+  }
+
+  &__legal {
+    background: v.$color-bg-legal;
+    padding: v.$spacing-4;
+    border-radius: v.$radius-base;
+    margin-bottom: v.$spacing-6;
+
+    p {
+      font-size: v.$font-size-sm;
+      line-height: 1.4;
+      color: v.$color-text-primary;
+      margin: 0;
+    }
+  }
+}

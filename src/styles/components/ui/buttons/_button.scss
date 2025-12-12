@@ -1,0 +1,49 @@
+// src/styles/components/_button.scss
+
+@use '../../../abstracts/variables' as v;
+@use '../../../abstracts/mixins' as m;
+
+.btn {
+  @include m.button-base;
+  background: v.$color-text-primary;
+  color: v.$color-bg-card;
+  font-family: v.$font-primary;
+
+  &--primary {
+    background: v.$color-text-primary;
+    color: v.$color-bg-card;
+  }
+
+  &--secondary {
+    background: v.$color-primary;
+    color: v.$white;
+    border-color: v.$color-primary;
+  }
+
+  &--outline {
+    background: transparent;
+    border-color: v.$color-text-primary;
+    color: v.$color-text-primary;
+
+    &:hover:not(:disabled) {
+      background: v.$color-text-primary;
+      color: v.$white;
+    }
+  }
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &--small {
+    height: 40px;
+    padding: 10px 20px;
+    font-size: v.$font-size-base;
+  }
+
+  &--large {
+    height: 64px;
+    padding: 20px 40px;
+    font-size: v.$font-size-lg;
+  }
+}

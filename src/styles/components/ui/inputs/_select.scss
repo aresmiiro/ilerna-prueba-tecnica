@@ -1,0 +1,82 @@
+@use '../../../abstracts/variables' as v;
+@use '../../../abstracts/mixins' as m;
+
+.select {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-1;
+  position: relative;
+
+  &__label {
+    font-size: v.$font-size-sm;
+    font-weight: v.$font-weight-medium;
+    color: v.$color-text-primary;
+  }
+
+  &__trigger {
+    @include m.input-base;
+    @include m.flex-between;
+    cursor: pointer;
+    user-select: none;
+
+    &--open {
+      border-color: v.$color-border-focus;
+    }
+  }
+
+  &__value {
+    flex: 1;
+    color: v.$color-text-secondary;
+
+    &--selected {
+      color: v.$color-text-primary;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    color: v.$color-text-primary;
+    transition: transform v.$transition-base;
+
+    &--open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: v.$color-bg-card;
+    border: v.$border-width-base solid v.$color-border;
+    border-radius: v.$radius-base;
+    box-shadow: v.$shadow-dropdown;
+    max-height: 240px;
+    overflow-y: auto;
+    z-index: v.$z-index-dropdown;
+  }
+
+  &__option {
+    padding: v.$spacing-3 v.$spacing-4;
+    cursor: pointer;
+    font-size: v.$font-size-base;
+    color: v.$color-text-primary;
+    transition: background v.$transition-fast;
+
+    &:hover {
+      background: rgba(v.$color-primary, 0.1);
+    }
+
+    &--selected {
+      background: rgba(v.$color-primary, 0.15);
+      font-weight: v.$font-weight-medium;
+    }
+  }
+
+  &__error {
+    font-size: v.$font-size-xs;
+    color: v.$color-error;
+    margin-top: v.$spacing-1;
+  }
+}
