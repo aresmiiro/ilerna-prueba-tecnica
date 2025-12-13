@@ -1,15 +1,14 @@
-// Imports limpios y organizados
-import Header from './components/layout/Header';
-import Footer from './components/layout/Footer';
-import Landing from './components/pages/Landing';
-import './styles/main.scss';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Home from './pages/Home/Home';
+import './styles/globals.scss';
 
 function App() {
   return (
     <div className="app">
       <Header />
       <main style={{ marginTop: '80px' }}>
-        <Landing />
+        <Home />
       </main>
       <Footer />
     </div>

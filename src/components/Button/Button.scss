@@ -1,17 +1,15 @@
-// src/styles/components/_button.scss
-
-@use '../../../abstracts/variables' as v;
-@use '../../../abstracts/mixins' as m;
+@use '../../styles/abstracts/variables' as v;
+@use '../../styles/abstracts/mixins' as m;
 
 .btn {
   @include m.button-base;
   background: v.$color-text-primary;
-  color: v.$color-bg-card;
+  color: v.$white;
   font-family: v.$font-primary;
 
   &--primary {
     background: v.$color-text-primary;
-    color: v.$color-bg-card;
+    color: v.$white;
   }
 
   &--secondary {

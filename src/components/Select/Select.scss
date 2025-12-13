@@ -1,5 +1,5 @@
-@use '../../../abstracts/variables' as v;
-@use '../../../abstracts/mixins' as m;
+@use '../../styles/abstracts/variables' as v;
+@use '../../styles/abstracts/mixins' as m;
 
 .select {
   display: flex;
@@ -13,14 +13,14 @@
     color: v.$color-text-primary;
   }
 
-  &__trigger {
+  &__field {
     @include m.input-base;
     @include m.flex-between;
     cursor: pointer;
     user-select: none;
 
-    &--open {
-      border-color: v.$color-border-focus;
+    &--error {
+      @include m.input-error;
     }
   }
 
@@ -48,13 +48,17 @@
     top: calc(100% + 4px);
     left: 0;
     right: 0;
-    background: v.$color-bg-card;
+    background: v.$white;
     border: v.$border-width-base solid v.$color-border;
     border-radius: v.$radius-base;
     box-shadow: v.$shadow-dropdown;
     max-height: 240px;
     overflow-y: auto;
     z-index: v.$z-index-dropdown;
+
+    &--open {
+      display: block;
+    }
   }
 
   &__option {

@@ -1,23 +1,28 @@
-// src/components/Select.jsx
-
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
+import './Select.scss';
 
 const Select = ({
   label,
   name,
-  placeholder = 'Selecciona una opción',
+  placeholder,
   options = [],
   value,
   onChange,
   error,
+  helpText,
   required = false,
+  disabled = false,
   className = ''
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const selectRef = useRef(null);
 
-  // Cerrar al hacer click fuera
+  const handleSelect = (option) => {
+    onChange({ target: { name, value: option } });
+    setIsOpen(false);
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (selectRef.current && !selectRef.current.contains(event.target)) {
@@ -29,24 +34,14 @@ const Select = ({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleSelect = (option) => {
-    onChange({ target: { name, value: option } });
-    setIsOpen(false);
-  };
-
-  const triggerClasses = [
-    'select__trigger',
-    isOpen && 'select__trigger--open'
+  const fieldClasses = [
+    'select__field',
+    error && 'select__field--error'
   ].filter(Boolean).join(' ');
 
-  const valueClasses = [
-    'select__value',
-    value && 'select__value--selected'
-  ].filter(Boolean).join(' ');
-
-  const iconClasses = [
-    'select__icon',
-    isOpen && 'select__icon--open'
+  const dropdownClasses = [
+    'select__dropdown',
+    isOpen && 'select__dropdown--open'
   ].filter(Boolean).join(' ');
 
   return (
@@ -57,16 +52,22 @@ const Select = ({
           {required && <span style={{ color: '#dc3545' }}> *</span>}
         </label>
       )}
-      
-      <div className={triggerClasses} onClick={() => setIsOpen(!isOpen)}>
-        <span className={valueClasses}>
+
+      <div
+        className={fieldClasses}
+        onClick={() => !disabled && setIsOpen(!isOpen)}
+      >
+        <span className={value ? 'select__value select__value--selected' : 'select__value'}>
           {value || placeholder}
         </span>
-        <ChevronDown size={20} className={iconClasses} />
+        <ChevronDown
+          className={isOpen ? 'select__icon select__icon--open' : 'select__icon'}
+          size={20}
+        />
       </div>
-      
+
       {isOpen && (
-        <div className="select__dropdown">
+        <div className={dropdownClasses}>
           {options.map((option, index) => {
             const isSelected = option === value;
             const optionClasses = [
@@ -86,7 +87,7 @@ const Select = ({
           })}
         </div>
       )}
-      
+
       {error && (
         <span className="select__error">{error}</span>
       )}

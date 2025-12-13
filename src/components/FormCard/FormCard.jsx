@@ -1,9 +1,8 @@
-// src/components/FormCard.jsx
-
 import React, { useState } from 'react';
-import Input from '../../ui/Input';
-import Select from '../../ui/Select';
-import Button from '../../ui/Button';
+import Input from '../Input/Input';
+import Select from '../Select/Select';
+import Button from '../Button/Button';
+import './FormCard.scss';
 
 const FormCard = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
@@ -85,13 +84,11 @@ const FormCard = ({ onSubmit }) => {
   ];
 
   return (
-    <div className="form-card">
-      <div className="form-card__decoration" />
-      
-      <div className="form-card__container">
-        <h2 className="form-card__title">Solicita información</h2>
-        
-        <div className="form-card__fields">
+    <div className={'form-card'}>
+      <div className={'form-card__container'}>
+        <h2 className={'form-card__title'}>Solicita información</h2>
+
+        <div className={'form-card__fields'}>
           <Input
             name="nombre"
             placeholder="Nombre y apellidos"
@@ -100,7 +97,7 @@ const FormCard = ({ onSubmit }) => {
             error={errors.nombre}
             required
           />
-          
+
           <Input
             name="telefono"
             type="tel"
@@ -110,7 +107,7 @@ const FormCard = ({ onSubmit }) => {
             error={errors.telefono}
             required
           />
-          
+
           <Input
             name="codigoPostal"
             placeholder="Código Postal"
@@ -119,7 +116,7 @@ const FormCard = ({ onSubmit }) => {
             error={errors.codigoPostal}
             required
           />
-          
+
           <Select
             name="ciudad"
             placeholder="Dónde quieres estudiar"
@@ -129,7 +126,7 @@ const FormCard = ({ onSubmit }) => {
             error={errors.ciudad}
             required
           />
-          
+
           <Select
             name="ciclo"
             placeholder="¿Qué ciclo te interesa?"
@@ -139,15 +136,15 @@ const FormCard = ({ onSubmit }) => {
             error={errors.ciclo}
             required
           />
-          
-          <div className="form-card__legal">
+
+          <div className={'form-card__legal'}>
             <p>
-              <strong>ILERNA Online SL.</strong> tratará tus datos personales conforme a tu 
+              <strong>ILERNA Online SL.</strong> tratará tus datos personales conforme a tu
               solicitud para contactar e informarle del programa, curso.
             </p>
           </div>
         </div>
-        
+
         <Button fullWidth onClick={handleSubmit}>
           Solicitar información
         </Button>

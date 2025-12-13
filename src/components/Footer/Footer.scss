@@ -1,7 +1,5 @@
-// src/styles/components/_footer.scss
-
-@use '../../abstracts/variables' as v;
-@use '../../abstracts/mixins' as m;
+@use '../../styles/abstracts/variables' as v;
+@use '../../styles/abstracts/mixins' as m;
 
 .footer {
   background: v.$color-bg-primary;
@@ -91,99 +89,12 @@
     }
   }
 
-  &__divider {
-    height: 1px;
-    background: v.$color-border-light;
-  }
-
   &__links {
     padding: v.$spacing-16 0;
     background: v.$white;
 
     @include m.mobile {
       padding: v.$spacing-10 0;
-    }
-  }
-
-  &__links-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: v.$spacing-10;
-
-    @include m.tablet {
-      grid-template-columns: repeat(2, 1fr);
-      gap: v.$spacing-8;
-    }
-
-    @include m.mobile {
-      grid-template-columns: 1fr;
-      gap: v.$spacing-6;
-    }
-  }
-
-  &__column {
-    @include m.flex-column;
-  }
-
-  &__column-title {
-    font-size: 19px;
-    font-weight: v.$font-weight-bold;
-    color: v.$black;
-    margin: 0 0 v.$spacing-4 0;
-    font-family: v.$font-primary;
-  }
-
-  &__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    @include m.flex-column;
-    gap: v.$spacing-3;
-  }
-
-  &__list-item {
-    font-size: 17px;
-    line-height: 1.5;
-
-    a {
-      color: v.$black;
-      text-decoration: underline;
-      transition: color v.$transition-base;
-      font-family: v.$font-primary;
-
-      &:hover {
-        color: v.$color-primary-dark;
-      }
-    }
-  }
-
-  &__legal {
-    padding: v.$spacing-10 0;
-    background: v.$white;
-    border-top: 1px solid v.$color-border-light;
-  }
-
-  &__legal-links {
-    display: flex;
-    justify-content: center;
-    gap: 46px;
-    flex-wrap: wrap;
-
-    @include m.mobile {
-      flex-direction: column;
-      align-items: center;
-      gap: v.$spacing-4;
-    }
-
-    a {
-      font-size: v.$font-size-base;
-      color: v.$black;
-      transition: color v.$transition-base;
-      font-family: v.$font-primary;
-
-      &:hover {
-        color: v.$color-primary-dark;
-      }
     }
   }
 }

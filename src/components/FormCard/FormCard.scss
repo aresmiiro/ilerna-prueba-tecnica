@@ -1,12 +1,11 @@
-// src/styles/components/forms/_form-card.scss
-
-@use '../../../abstracts/variables' as v;
-@use '../../../abstracts/mixins' as m;
+@use '../../styles/abstracts/variables' as v;
+@use '../../styles/abstracts/mixins' as m;
 
 .form-card {
   @include m.card;
   width: 100%;
   position: relative;
+
   &::after {
     content: '';
     position: absolute;
@@ -31,6 +30,7 @@
 
   &__title {
     margin-bottom: v.$spacing-8;
+
     @include m.mobile {
       font-size: 28px;
     }

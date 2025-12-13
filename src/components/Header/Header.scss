@@ -1,14 +1,12 @@
-// src/styles/components/_header.scss
-
-@use '../../abstracts/variables' as v;
-@use '../../abstracts/mixins' as m;
+@use '../../styles/abstracts/variables' as v;
+@use '../../styles/abstracts/mixins' as m;
 
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: v.$color-bg-card;
+  background: v.$white;
   box-shadow: 0px 4px 8px 0px rgba(v.$black, 0.2);
   z-index: v.$z-index-header;
   height: 80px;

@@ -85,7 +85,7 @@ Basada en el diseño de Figma con progresión armónica:
 | Color             | Hex                | Uso                            | Variable SASS       |
 | ----------------- | ------------------ | ------------------------------ | ------------------- |
 | ⬜ Beige Claro    | `#faf9f6`          | Fondo general de la página     | `$color-bg-primary` |
-| ⬜ Blanco         | `#ffffff`          | Tarjetas, formularios, modales | `$color-bg-card`    |
+| ⬜ Blanco         | `#ffffff`          | Tarjetas, formularios, modales | `$white`    |
 | ⬜ Gris Muy Claro | `rgba(0,0,0,0.04)` | Fondo de texto legal           | `$color-bg-legal`   |
 
 ### Colores de Borde
@@ -283,7 +283,7 @@ Basado en múltiplos de **8px** para mantener consistencia visual:
 .btn {
   @include button-base;
   background: $color-text-primary;
-  color: $color-bg-card;
+  color: $white;
 
   &:hover {
     @include button-hover;
@@ -387,7 +387,7 @@ Basado en múltiplos de **8px** para mantener consistencia visual:
 @import "../../../styles/abstracts/mixins";
 
 .mi-componente {
-  background: $color-bg-card;
+  background: $white;
   padding: $spacing-6;
   border-radius: $radius-lg;
 

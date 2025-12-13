@@ -1,6 +1,5 @@
-// src/components/Input.jsx
-
 import React from 'react';
+import './Input.scss';
 
 const Input = ({
   label,
@@ -28,7 +27,7 @@ const Input = ({
           {required && <span style={{ color: '#dc3545' }}> *</span>}
         </label>
       )}
-      
+
       <input
         id={name}
         name={name}
@@ -40,11 +39,11 @@ const Input = ({
         required={required}
         disabled={disabled}
       />
-      
+
       {error && (
         <span className="input__error">{error}</span>
       )}
-      
+
       {helpText && !error && (
         <span className="input__help">{helpText}</span>
       )}

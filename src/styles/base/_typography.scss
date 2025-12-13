@@ -1,60 +1,213 @@
-// src/styles/base/_typography.scss
 @use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *; 
+@use '../abstracts/mixins' as *;
+
+// Body base -----------------------------------------
 
 body {
   font-family: $font-primary;
-  font-size: $font-size-base;
+  font-size: $font-size-base;     // 1rem = 16px
   line-height: $line-height-normal;
   color: $color-text-primary;
   font-weight: $font-weight-regular;
+  margin: 0;
+  background-color: $color-bg-body;
 }
+
+// Headings -------------------------------------------
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-primary;
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-semibold; // Demi Bold según Figma
   line-height: $line-height-tight;
   color: $color-text-primary;
   margin: 0;
 }
 
+/* Mobile first - Tamaños según diseño de Figma */
 h1 {
-  font-size: $font-size-2xl;
-  
-  @include mobile {
-    font-size: 42px;
+  font-size: $font-size-2xl; // 2rem = 32px en mobile
+  line-height: $line-height-tight; // 1.25
+
+  @include tablet {
+    font-size: $font-size-3xl; // 2.5rem = 40px
+  }
+
+  @include desktop {
+    font-size: $font-size-5xl; // 3.625rem = 58px - Según Figma node-id="1:34"
   }
 }
 
 h2 {
-  font-size: $font-size-xl;
-  
-  @include mobile {
-    font-size: 28px;
+  font-size: $font-size-xl; // 1.5rem = 24px en mobile
+  line-height: $line-height-tight;
+
+  @include tablet {
+    font-size: $font-size-2xl; // 32px
+  }
+
+  @include desktop {
+    font-size: $font-size-2xl; // 32px - "Solicita información" en Figma
+    line-height: normal;
   }
 }
 
-p {
-  font-family: $font-primary;
-  font-size: $font-size-md;
+h3 {
+  font-size: $font-size-lg; // 1.25rem = 20px
   line-height: $line-height-normal;
-  color: $color-text-primary;
-  margin: 0;
+
+  @include tablet {
+    font-size: $font-size-xl; // 24px
+  }
+
+  @include desktop {
+    font-size: $font-size-xl; // 24px
+  }
 }
 
-strong {
+h4 {
+  font-size: $font-size-md; // 18px
+  line-height: $line-height-normal;
+
+  @include tablet {
+    font-size: $font-size-lg; // 20px
+  }
+
+  @include desktop {
+    font-size: $font-size-lg; // 20px
+  }
+}
+
+h5 {
+  font-size: $font-size-base; // 16px
+  line-height: $line-height-normal;
+
+  @include tablet {
+    font-size: $font-size-md; // 18px
+  }
+
+  @include desktop {
+    font-size: $font-size-md; // 18px
+  }
+}
+
+h6 {
+  font-size: $font-size-sm; // 14px
+  line-height: $line-height-normal;
+
+  @include tablet {
+    font-size: $font-size-base; // 16px
+  }
+
+  @include desktop {
+    font-size: $font-size-base; // 16px
+  }
+}
+
+// Paragraphs & text ---------------------------------
+
+p {
+  font-family: $font-primary;
+  font-size: $font-size-md;       // 18px - según Figma node-id="1:36"
+  line-height: $line-height-normal; // 1.5
+  font-weight: $font-weight-regular;
+  margin: 0;
+  color: $color-text-primary;
+}
+
+small {
+  font-size: $font-size-sm;       // 14px - texto legal en Figma
+  line-height: $line-height-normal;
+  color: $color-text-primary;
+  opacity: 1; // Sin opacidad para mejor legibilidad
+}
+
+.lead {
+  font-size: $font-size-lg;       // 20px
+  line-height: $line-height-relaxed;
+
+  @include desktop {
+    font-size: $font-size-xl;     // 24px
+  }
+}
+
+strong, 
+b {
+  font-weight: $font-weight-bold; // Bold para énfasis
+}
+
+// Clases de utilidad tipográfica
+// ============================================
+
+.text-regular {
+  font-weight: $font-weight-regular;
+}
+
+.text-medium {
+  font-weight: $font-weight-medium;
+}
+
+.text-demi-bold {
+  font-weight: $font-weight-semibold;
+}
+
+.text-bold {
   font-weight: $font-weight-bold;
 }
 
-// Clases de utilidad
-.font-primary {
+// Estilos de inputs según Figma
+// ============================================
+
+input,
+textarea,
+select {
   font-family: $font-primary;
+  font-size: $font-size-base;     // 16px según Figma
+  font-weight: $font-weight-regular;
+  color: $color-text-secondary;   // #333 para placeholders
+  line-height: 1.25; // 20px según node-id="1:15"
 }
 
-.font-secondary {
-  font-family: $font-secondary;
+// Estilos de botones según Figma
+// ============================================
+
+button {
+  font-family: $font-primary;
+  font-size: $font-size-lg;       // 20px según node-id="1:32"
+  font-weight: $font-weight-bold;
+  line-height: normal;
+  text-align: center;
 }
 
-.font-tertiary {
-  font-family: $font-tertiary;
+// Links con subrayado
+// ============================================
+
+a {
+  color: $color-text-primary;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+  font-weight: $font-weight-medium;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Clases de utilidad de color
+// ============================================
+
+.text-primary {
+  color: $color-text-primary;
+}
+
+.text-secondary {
+  color: $color-text-secondary;
+}
+
+.text-light {
+  color: $color-text-light;
+}
+
+.text-white {
+  color: $white;
 }

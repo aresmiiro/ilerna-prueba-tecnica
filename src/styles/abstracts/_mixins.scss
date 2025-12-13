@@ -1,11 +1,11 @@
-// src/styles/abstracts/_mixins.scss
-
-@use './variables' as v;
+@use 'variables' as v;
 
 // ============================================
-// RESPONSIVE (BREAKPOINTS)
+// MIXINS - Funciones reutilizables
 // ============================================
 
+// RESPONSIVE
+// ============================================
 @mixin mobile {
   @media (max-width: #{v.$breakpoint-mobile - 1px}) {
     @content;
@@ -19,33 +19,25 @@
 }
 
 @mixin desktop {
-  @media (min-width: #{v.$breakpoint-tablet}) {
+  @media (min-width: #{v.$breakpoint-desktop}) {
     @content;
   }
 }
 
-@mixin desktop-large {
-  @media (min-width: #{v.$breakpoint-desktop-large}) {
+@mixin from($breakpoint) {
+  @media (min-width: #{map-get(v.$breakpoints, $breakpoint)}) {
     @content;
   }
 }
 
-// Genérico
-@mixin respond-to($breakpoint) {
-  @if map-has-key(v.$breakpoints, $breakpoint) {
-    $value: map-get(v.$breakpoints, $breakpoint);
-    @media (min-width: $value) {
-      @content;
-    }
-  } @else {
-    @warn "Breakpoint #{$breakpoint} no existe";
+@mixin until($breakpoint) {
+  @media (max-width: #{map-get(v.$breakpoints, $breakpoint) - 1px}) {
+    @content;
   }
 }
 
-// ============================================
 // LAYOUT
 // ============================================
-
 @mixin flex-center {
   display: flex;
   justify-content: center;
@@ -63,7 +55,6 @@
   flex-direction: column;
 }
 
-// Contenedor de grid
 @mixin container {
   width: 100%;
   max-width: v.$grid-container-max-width;
@@ -71,13 +62,9 @@
   padding: 0 v.$spacing-4;
 
   @include desktop {
-    padding: 0 ;
+    padding: 0;
   }
 }
-
-// ============================================
-// GRID DE 12 COLUMNAS
-// ============================================
 
 @mixin grid-12 {
   display: grid;
@@ -93,10 +80,8 @@
   }
 }
 
-// ============================================
 // COMPONENTES
 // ============================================
-
 @mixin input-base {
   width: 100%;
   height: v.$input-height;
@@ -107,7 +92,7 @@
   font-family: v.$font-primary;
   font-weight: v.$font-weight-regular;
   color: v.$color-text-secondary;
-  background: v.$color-bg-card;
+  background: v.$white;
   transition: all v.$transition-base v.$easing-out;
 
   &::placeholder {
@@ -155,7 +140,7 @@
 }
 
 @mixin card {
-  background: v.$color-bg-card;
+  background: v.$white;
   border-radius: v.$radius-lg;
   box-shadow: v.$shadow-card;
   padding: v.$form-card-padding;
