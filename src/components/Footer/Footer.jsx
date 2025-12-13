@@ -1,49 +1,126 @@
 import React from 'react';
-import { Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Youtube, Linkedin, Phone } from 'lucide-react';
 import './Footer.scss';
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer__contact">
-        <div className="footer__container">
-          <h2 className="footer__title">Contacto</h2>
+      <div className="footer__container">
+        {/* Logo y redes sociales */}
+        <div className="footer__top">
+          <div className="footer__logo">iLERNA</div>
+          
+          <p className="footer__social-title">Síguenos</p>
+          <div className="footer__social-icons">
+            <a href="#" className="footer__social-link" aria-label="Facebook">
+              <Facebook size={20} />
+            </a>
+            <a href="#" className="footer__social-link" aria-label="Instagram">
+              <Instagram size={20} />
+            </a>
+            <a href="#" className="footer__social-link" aria-label="Twitter">
+              <Twitter size={20} />
+            </a>
+            <a href="#" className="footer__social-link" aria-label="YouTube">
+              <Youtube size={20} />
+            </a>
+            <a href="#" className="footer__social-link" aria-label="LinkedIn">
+              <Linkedin size={20} />
+            </a>
+          </div>
+        </div>
 
-          <div className="footer__contact-grid">
-            <div className="footer__contact-item">
-              <p className="footer__label">Teléfono:</p>
-              <p className="footer__value">910 84 16 72</p>
-            </div>
-
-            <div className="footer__contact-item">
-              <p className="footer__label">Email:</p>
-              <p className="footer__value">online@ilerna.com</p>
-            </div>
-
-            <div className="footer__social">
-              <p className="footer__label">Síguenos:</p>
-              <div className="footer__social-icons">
-                <a href="#" className="footer__social-link" aria-label="Facebook">
-                  <Facebook size={24} />
-                </a>
-                <a href="#" className="footer__social-link" aria-label="Instagram">
-                  <Instagram size={24} />
-                </a>
-                <a href="#" className="footer__social-link" aria-label="YouTube">
-                  <Youtube size={24} />
-                </a>
-                <a href="#" className="footer__social-link" aria-label="LinkedIn">
-                  <Linkedin size={24} />
-                </a>
+        {/* Contenido principal - 4 columnas */}
+        <div className="footer__content">
+          {/* Columna 1: Contacto */}
+          <div className="footer__section">
+            <h3 className="footer__section-title">Contacto</h3>
+            <div className="footer__links">
+              <div className="footer__contact-item">
+                <a href="tel:900730222" className="footer__contact-value">900 730 222</a>
               </div>
+              <div className="footer__contact-item">
+                <span className="footer__contact-label">Horario: De L a V de 9:00 a 20:00.</span>
+              </div>
+              <div className="footer__contact-item">
+                <a href="mailto:online@ilerna.com" className="footer__contact-value">online@ilerna.com</a>
+              </div>
+            </div>
+
+            <h3 className="footer__section-title" style={{ marginTop: '24px' }}>iLERNA</h3>
+            <div className="footer__links">
+              <a href="#" className="footer__link">Grupo iLERNA</a>
+              <a href="#" className="footer__link">Blog iLERNA</a>
+              <a href="#" className="footer__link">Centro de Ayuda</a>
+              <a href="#" className="footer__link">Opiniones alumnos</a>
+              <a href="#" className="footer__link">Movilidad Internacional</a>
+              <a href="#" className="footer__link">Trabaja con nosotros</a>
+            </div>
+          </div>
+
+          {/* Columna 2: Centros */}
+          <div className="footer__section">
+            <h3 className="footer__section-title">Centros</h3>
+            <div className="footer__links">
+              <a href="#" className="footer__link">FP Sevilla</a>
+              <a href="#" className="footer__link">FP Madrid</a>
+              <a href="#" className="footer__link">FP Lleida</a>
+              <a href="#" className="footer__link">FP Tarragona</a>
+              <a href="#" className="footer__link">FP Barcelona</a>
+              <a href="#" className="footer__link">FP Valladolid</a>
+              <a href="#" className="footer__link">FP Córdoba</a>
+              <a href="#" className="footer__link">FP Cádiz</a>
+            </div>
+          </div>
+
+          {/* Columna 3: Grados de FP */}
+          <div className="footer__section">
+            <h3 className="footer__section-title">Grados de FP</h3>
+            <div className="footer__links">
+              <a href="#" className="footer__link">Grado Medio</a>
+              <a href="#" className="footer__link">Grado Superior</a>
+            </div>
+
+            <h3 className="footer__section-title" style={{ marginTop: '24px' }}>Modalidades de FP</h3>
+            <div className="footer__links">
+              <a href="#" className="footer__link">FP a distancia</a>
+              <a href="#" className="footer__link">FP Presencial</a>
+              <a href="#" className="footer__link">FP Semipresencial</a>
+              <a href="#" className="footer__link">FP + Universidad</a>
+              <a href="#" className="footer__link">CSO para adultos</a>
+            </div>
+          </div>
+
+          {/* Columna 4: Familias FP */}
+          <div className="footer__section">
+            <h3 className="footer__section-title">Familias FP</h3>
+            <div className="footer__links">
+              <a href="#" className="footer__link">FP Sanidad</a>
+              <a href="#" className="footer__link">FP Servicios Socioculturales</a>
+              <a href="#" className="footer__link">FP Imagen y Sonido</a>
+              <a href="#" className="footer__link">FP Marketing y Comercio</a>
+              <a href="#" className="footer__link">FP Informática y Comunicaciones</a>
+              <a href="#" className="footer__link">FP Administración y Gestión</a>
+              <a href="#" className="footer__link">FP Hostelería y Turismo</a>
+              <a href="#" className="footer__link">FP Deporte</a>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="footer__links">
-        <div className="footer__container">
-          <p>&copy; {new Date().getFullYear()} iLERNA. Todos los derechos reservados.</p>
+        <div className="footer__divider"></div>
+
+        {/* Parte inferior */}
+        <div className="footer__bottom">
+          <div className="footer__legal-links">
+            <a href="#" className="footer__legal-link">Promociones</a>
+            <a href="#" className="footer__legal-link">Condiciones de venta</a>
+            <a href="#" className="footer__legal-link">Política de cookies</a>
+            <a href="#" className="footer__legal-link">Política de privacidad</a>
+            <a href="#" className="footer__legal-link">Aviso legal</a>
+            <a href="#" className="footer__legal-link">Resolución de litigios</a>
+            <a href="#" className="footer__legal-link">Canal ético</a>
+            <a href="#" className="footer__legal-link">Mapa Web</a>
+          </div>
         </div>
       </div>
     </footer>

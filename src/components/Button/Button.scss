@@ -3,9 +3,32 @@
 
 .btn {
   @include m.button-base;
+  border: none;
   background: v.$color-text-primary;
   color: v.$white;
-  font-family: v.$font-primary;
+  font-size: v.$font-size-md;
+  font-weight: v.$font-weight-bold;
+  text-align: center;
+  line-height: normal;
+
+  &:hover:not(:disabled) {
+    background: v.$color-primary-dark;
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    background-color: v.$gray-200;
+    cursor: not-allowed;
+    opacity: 0.6;
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
 
   &--primary {
     background: v.$color-text-primary;
@@ -15,12 +38,11 @@
   &--secondary {
     background: v.$color-primary;
     color: v.$white;
-    border-color: v.$color-primary;
   }
 
   &--outline {
     background: transparent;
-    border-color: v.$color-text-primary;
+    border: v.$border-width-base solid v.$color-text-primary;
     color: v.$color-text-primary;
 
     &:hover:not(:disabled) {
@@ -34,14 +56,14 @@
   }
 
   &--small {
-    height: 40px;
-    padding: 10px 20px;
-    font-size: v.$font-size-base;
+    height: 2.75rem;
+    padding: v.$spacing-3 v.$spacing-6;
+    font-size: v.$font-size-sm;  // Solo sobreescribe el tamaño
   }
 
   &--large {
-    height: 64px;
-    padding: 20px 40px;
-    font-size: v.$font-size-lg;
+    height: 4rem;
+    padding: v.$spacing-5 v.$spacing-10;
+    font-size: v.$font-size-lg;  // Solo sobreescribe el tamaño
   }
 }

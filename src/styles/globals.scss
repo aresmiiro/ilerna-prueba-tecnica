@@ -6,11 +6,12 @@
 @use './abstracts/variables' as *;
 @use './abstracts/mixins' as *;
 
+// Utilities (PRIMERO - para que @extend funcione)
+@use './utilities/utilities' as *;
+
 // Base Styles
 @use './base/fonts';
 @use './base/reset' as *;
 @use './base/typography' as *;
 
-// Layout
-@use './layout/grid' as *;
-@use './layout/spacing' as *;
+

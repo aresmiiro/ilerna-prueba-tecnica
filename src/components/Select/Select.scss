@@ -10,72 +10,62 @@
   &__label {
     font-size: v.$font-size-sm;
     font-weight: v.$font-weight-medium;
-    color: v.$color-text-primary;
+    color: v.$color-text-secondary;
+  }
+
+  &__wrapper {
+    position: relative;
   }
 
   &__field {
-    @include m.input-base;
-    @include m.flex-between;
+    width: 100%;
+    height: 50px;
+    padding: 14px 40px 14px 16px;
+    border: 2px solid v.$color-text-primary;
+    border-radius: 8px;
     cursor: pointer;
-    user-select: none;
+    transition: all v.$transition-base v.$easing-in-out;
+    appearance: none; // Quita la flecha por defecto
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    &::-ms-expand {
+      display: none; // Quita la flecha en IE
+    }
+
+    // Color del placeholder (primera opción disabled)
+    option[value=""][disabled] {
+      color: v.$color-text-secondary;
+    }
+
+
+    &:focus {
+      outline: none;
+      border-color: v.$color-text-primary;
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+    }
 
     &--error {
-      @include m.input-error;
+      border-color: v.$color-error;
     }
-  }
 
-  &__value {
-    flex: 1;
-    color: v.$color-text-secondary;
+ 
 
-    &--selected {
+    // Cuando tiene un valor seleccionado
+    &:valid {
       color: v.$color-text-primary;
     }
   }
 
   &__icon {
-    flex-shrink: 0;
-    color: v.$color-text-primary;
-    transition: transform v.$transition-base;
-
-    &--open {
-      transform: rotate(180deg);
-    }
-  }
-
-  &__dropdown {
     position: absolute;
-    top: calc(100% + 4px);
-    left: 0;
-    right: 0;
-    background: v.$white;
-    border: v.$border-width-base solid v.$color-border;
-    border-radius: v.$radius-base;
-    box-shadow: v.$shadow-dropdown;
-    max-height: 240px;
-    overflow-y: auto;
-    z-index: v.$z-index-dropdown;
-
-    &--open {
-      display: block;
-    }
-  }
-
-  &__option {
-    padding: v.$spacing-3 v.$spacing-4;
-    cursor: pointer;
-    font-size: v.$font-size-base;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
     color: v.$color-text-primary;
-    transition: background v.$transition-fast;
-
-    &:hover {
-      background: rgba(v.$color-primary, 0.1);
-    }
-
-    &--selected {
-      background: rgba(v.$color-primary, 0.15);
-      font-weight: v.$font-weight-medium;
-    }
+    width: 12px;
+    height: 16px;
   }
 
   &__error {

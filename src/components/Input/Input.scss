@@ -6,31 +6,41 @@
   flex-direction: column;
   gap: v.$spacing-1;
 
-  &__label {
-    font-size: v.$font-size-sm;
-    font-weight: v.$font-weight-medium;
-    color: v.$color-text-primary;
-    margin-bottom: v.$spacing-1;
-  }
-
   &__field {
-    @include m.input-base;
+    width: 100%;
+    height: 50px;
+    padding: 14px 16px;
+    border: 2px solid v.$color-text-primary;
+    border-radius: 8px;
+   
+    background-color: v.$white;
+    transition: all v.$transition-base v.$easing-in-out;
+    
+    &::placeholder {
+      color: v.$color-text-secondary;
+      font-weight: v.$font-weight-regular;
+      opacity: 1;
+    }
+
+    &:focus {
+      outline: v.$color-border-focus;
+      border-color: v.$color-primary-dark;
+    }
+
+    &:disabled {
+      background-color: rgba(0, 0, 0, 0.04);
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
 
     &--error {
-      @include m.input-error;
+      border-color: v.$color-error;
     }
   }
 
   &__error {
     font-size: v.$font-size-xs;
     color: v.$color-error;
-    margin-top: v.$spacing-1;
-    font-weight: v.$font-weight-medium;
-  }
-
-  &__help {
-    font-size: v.$font-size-xs;
-    color: v.$color-text-light;
     margin-top: v.$spacing-1;
   }
 }

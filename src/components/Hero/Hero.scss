@@ -2,14 +2,17 @@
 @use '../../styles/abstracts/mixins' as m;
 
 .hero {
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 5rem);
   background: v.$color-bg-primary;
-  padding: v.$spacing-16 0;
+  padding: v.$spacing-12 0;
   position: relative;
   overflow: hidden;
-
-  @include m.mobile {
-    padding: v.$spacing-10 0;
+  margin-top: 50px;
+ @include m.desktop {
+      margin-top: 121px;
+  }
+  @include m.desktop {
+    padding: v.$spacing-16 0;
   }
 
   &__container {
@@ -19,52 +22,51 @@
   }
 
   &__logo {
-    margin-top: 47px;
-    margin-bottom: 88px;
-
-    @include m.mobile {
-      margin-bottom: 40px;
+    max-width: 155px;
+    margin-bottom: 56px;
+    @include m.desktop {
+        margin-bottom: 88px;
     }
-    
   }
 
   &__grid {
-    @include m.grid-12;
+    display: grid;
+    grid-template-columns: 1fr;
     align-items: start;
-    gap: v.$grid-gap;
+    gap: v.$spacing-8;
 
-    @include m.mobile {
-      grid-template-columns: 1fr;
-      gap: v.$spacing-8;
+    @include m.desktop {
+      grid-template-columns: repeat(12, 1fr);
+      gap: v.$grid-gap;
     }
   }
 
   &__content {
-    grid-column: 1 / 8;
+    grid-column: 1 / -1;
     position: relative;
 
-    @include m.mobile {
-      grid-column: 1 / -1;
+    @include m.desktop {
+      grid-column: 1 / 8;
     }
   }
 
   &__form-wrapper {
-    grid-column: 9 / 13;
+    grid-column: 1 / -1;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 
-    @include m.mobile {
-      grid-column: 1 / -1;
-      justify-content: center;
+    @include m.desktop {
+      grid-column: 9 / 13;
+      justify-content: flex-end;
     }
   }
 
   &__title {
-    margin-bottom: v.$spacing-8;
+    margin-bottom: v.$spacing-6;
     position: relative;
 
-    @include m.mobile {
-      margin-bottom: v.$spacing-6;
+    @include m.desktop {
+      margin-bottom: v.$spacing-8;
     }
   }
 
@@ -76,19 +78,19 @@
     &::before {
       content: "";
       position: absolute;
-      bottom: 12px;
+      bottom: 0.75rem;
       display: inline-block;
       width: 104%;
-      height: 30px;
-      background-color: #bfeaf1;
-      border-radius: 20px;
+      height: 1.875rem;
+      background-color: v.$color-primary-light;
+      border-radius: v.$spacing-5;
       z-index: -1;
-      left: -5px;
+      left: -0.3125rem;
     }
   }
 
   &__description {
-    font-size: v.$font-size-md;
+    font-size: v.$font-size-base;
     line-height: v.$line-height-normal;
     color: v.$color-text-primary;
     margin-bottom: v.$spacing-6;
@@ -98,8 +100,8 @@
       font-weight: v.$font-weight-bold;
     }
 
-    @include m.mobile {
-      font-size: v.$font-size-base;
+    @include m.desktop {
+      font-size: v.$font-size-md;
     }
   }
 
@@ -107,7 +109,7 @@
     background: none;
     border: none;
     color: v.$color-text-primary;
-    font-size: v.$font-size-md;
+    font-size: v.$font-size-base;
     font-weight: v.$font-weight-medium;
     text-decoration: underline;
     cursor: pointer;
@@ -121,24 +123,24 @@
       color: v.$color-primary-dark;
     }
 
-    @include m.mobile {
-      font-size: v.$font-size-base;
+    @include m.desktop {
+      font-size: v.$font-size-md;
     }
   }
 
   &__arrow {
+    display: none;
     position: absolute;
-    right: -60px;
-    bottom: -60px;
+    right: -3.75rem;
+    bottom: -3.75rem;
     z-index: 0;
+
+    @include m.desktop {
+      display: block;
+    }
 
     img {
       display: block;
-      
-    }
-
-    @include m.mobile {
-      display: none;
     }
   }
 }

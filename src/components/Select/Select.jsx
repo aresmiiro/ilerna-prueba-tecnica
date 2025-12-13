@@ -1,6 +1,22 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { ChevronDown } from 'lucide-react';
+import React from 'react';
 import './Select.scss';
+
+// Componente de icono de doble flecha
+const DoubleArrowIcon = () => (
+  <svg 
+    width="12" 
+    height="16" 
+    viewBox="0 0 12 16" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+    className="select__icon"
+  >
+    {/* Flecha arriba */}
+    <path d="M6 4L3 7L9 7L6 4Z" fill="currentColor"/>
+    {/* Flecha abajo */}
+    <path d="M6 12L9 9L3 9L6 12Z" fill="currentColor"/>
+  </svg>
+);
 
 const Select = ({
   label,
@@ -10,42 +26,17 @@ const Select = ({
   value,
   onChange,
   error,
-  helpText,
   required = false,
   disabled = false,
   className = ''
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const selectRef = useRef(null);
-
-  const handleSelect = (option) => {
-    onChange({ target: { name, value: option } });
-    setIsOpen(false);
-  };
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (selectRef.current && !selectRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
   const fieldClasses = [
     'select__field',
     error && 'select__field--error'
   ].filter(Boolean).join(' ');
 
-  const dropdownClasses = [
-    'select__dropdown',
-    isOpen && 'select__dropdown--open'
-  ].filter(Boolean).join(' ');
-
   return (
-    <div className={`select ${className}`} ref={selectRef}>
+    <div className={`select ${className}`}>
       {label && (
         <label className="select__label">
           {label}
@@ -53,40 +44,28 @@ const Select = ({
         </label>
       )}
 
-      <div
-        className={fieldClasses}
-        onClick={() => !disabled && setIsOpen(!isOpen)}
-      >
-        <span className={value ? 'select__value select__value--selected' : 'select__value'}>
-          {value || placeholder}
-        </span>
-        <ChevronDown
-          className={isOpen ? 'select__icon select__icon--open' : 'select__icon'}
-          size={20}
-        />
+      <div className="select__wrapper">
+        <select
+          name={name}
+          className={fieldClasses}
+          value={value}
+          onChange={onChange}
+          required={required}
+          disabled={disabled}
+        >
+          <option value="" disabled>
+            {placeholder}
+          </option>
+          {options.map((option, index) => (
+            <option key={index} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+        
+        {/* Icono de doble flecha */}
+        <DoubleArrowIcon />
       </div>
-
-      {isOpen && (
-        <div className={dropdownClasses}>
-          {options.map((option, index) => {
-            const isSelected = option === value;
-            const optionClasses = [
-              'select__option',
-              isSelected && 'select__option--selected'
-            ].filter(Boolean).join(' ');
-
-            return (
-              <div
-                key={index}
-                className={optionClasses}
-                onClick={() => handleSelect(option)}
-              >
-                {option}
-              </div>
-            );
-          })}
-        </div>
-      )}
 
       {error && (
         <span className="select__error">{error}</span>

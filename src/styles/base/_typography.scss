@@ -156,23 +156,26 @@ b {
 
 // Estilos de inputs según Figma
 // ============================================
+// Estos estilos se heredan automáticamente en todos los inputs
 
 input,
 textarea,
-select {
-  font-family: $font-primary;
-  font-size: $font-size-base;     // 16px según Figma
-  font-weight: $font-weight-regular;
-  color: $color-text-secondary;   // #333 para placeholders
-  line-height: 1.25; // 20px según node-id="1:15"
+select,
+option {
+   font-family: $font-primary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+    color: $color-text-secondary;
 }
 
 // Estilos de botones según Figma
 // ============================================
+// Estos estilos se heredan automáticamente en todos los botones
 
-button {
-  font-family: $font-primary;
-  font-size: $font-size-lg;       // 20px según node-id="1:32"
+button,
+.btn {
+  font-family: inherit;           // Hereda de body
+  font-size: $font-size-md;       // 18px - base para botones
   font-weight: $font-weight-bold;
   line-height: normal;
   text-align: center;
@@ -187,10 +190,6 @@ a {
   text-decoration-skip-ink: none;
   text-underline-position: from-font;
   font-weight: $font-weight-medium;
-  
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 // Clases de utilidad de color

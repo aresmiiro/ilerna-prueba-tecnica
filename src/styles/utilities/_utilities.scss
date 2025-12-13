@@ -1,0 +1,152 @@
+@use '../abstracts/variables' as v;
+
+// UTILITIES
+
+
+// Display utilities
+.d-none { display: none; }
+.d-block { display: block; }
+.d-inline { display: inline; }
+.d-inline-block { display: inline-block; }
+.d-flex { display: flex; }
+.d-inline-flex { display: inline-flex; }
+.d-grid { display: grid; }
+
+// Flex utilities
+.flex-row { flex-direction: row; }
+.flex-column { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+
+.justify-start { justify-content: flex-start; }
+.justify-end { justify-content: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+
+.align-start { align-items: flex-start; }
+.align-end { align-items: flex-end; }
+.align-center { align-items: center; }
+.align-stretch { align-items: stretch; }
+
+.flex-1 { flex: 1; }
+.flex-auto { flex: auto; }
+.flex-none { flex: none; }
+
+// Text utilities
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+.text-lowercase { text-transform: lowercase; }
+.text-uppercase { text-transform: uppercase; }
+.text-capitalize { text-transform: capitalize; }
+
+.font-weight-normal { font-weight: v.$font-weight-regular; }
+.font-weight-medium { font-weight: v.$font-weight-medium; }
+.font-weight-semibold { font-weight: v.$font-weight-semibold; }
+.font-weight-bold { font-weight: v.$font-weight-bold; }
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-break {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+// Color utilities
+.text-primary { color: v.$color-text-primary; }
+.text-secondary { color: v.$color-text-secondary; }
+.text-light { color: v.$color-text-light; }
+.text-error { color: v.$color-error; }
+
+.bg-primary { background-color: v.$color-primary; }
+.bg-white { background-color: v.$white; }
+.bg-gray-100 { background-color: v.$gray-100; }
+
+// Width utilities
+.w-100 { width: 100%; }
+.w-auto { width: auto; }
+
+.h-100 { height: 100%; }
+.h-auto { height: auto; }
+
+// Position utilities
+.position-relative { position: relative; }
+.position-absolute { position: absolute; }
+.position-fixed { position: fixed; }
+.position-sticky { position: sticky; }
+
+// Overflow utilities
+.overflow-auto { overflow: auto; }
+.overflow-hidden { overflow: hidden; }
+.overflow-visible { overflow: visible; }
+.overflow-scroll { overflow: scroll; }
+
+// Cursor utilities
+.cursor-pointer { cursor: pointer; }
+.cursor-default { cursor: default; }
+.cursor-not-allowed { cursor: not-allowed; }
+
+// Visibility utilities
+.visible { visibility: visible; }
+.invisible { visibility: hidden; }
+
+// Border radius utilities
+.rounded-sm { border-radius: v.$radius-sm; }
+.rounded { border-radius: v.$radius-base; }
+.rounded-md { border-radius: v.$radius-md; }
+.rounded-lg { border-radius: v.$radius-lg; }
+.rounded-xl { border-radius: v.$radius-xl; }
+.rounded-pill { border-radius: v.$radius-pill; }
+.rounded-circle { border-radius: 50%; }
+
+// Shadow utilities
+.shadow-sm { box-shadow: v.$shadow-sm; }
+.shadow { box-shadow: v.$shadow-base; }
+.shadow-md { box-shadow: v.$shadow-md; }
+.shadow-lg { box-shadow: v.$shadow-lg; }
+.shadow-none { box-shadow: none; }
+
+// Screen reader only utility
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Aspect ratio utilities
+.ratio-1-1 { aspect-ratio: 1 / 1; }
+.ratio-16-9 { aspect-ratio: 16 / 9; }
+.ratio-4-3 { aspect-ratio: 4 / 3; }
+
+// Transition utilities
+.transition-fast { transition: all v.$transition-fast v.$easing-in-out; }
+.transition-base { transition: all v.$transition-base v.$easing-in-out; }
+.transition-slow { transition: all v.$transition-slow v.$easing-in-out; }
+.transition-none { transition: none; }
+
+// Z-index utilities
+.z-dropdown { z-index: v.$z-index-dropdown; }
+.z-sticky { z-index: v.$z-index-sticky; }
+.z-header { z-index: v.$z-index-header; }
+.z-modal { z-index: v.$z-index-modal; }
+
+// User select utilities
+.user-select-none { user-select: none; }
+.user-select-auto { user-select: auto; }
+.user-select-text { user-select: text; }
+
+// Pointer events utilities
+.pe-none { pointer-events: none; }
+.pe-auto { pointer-events: auto; }

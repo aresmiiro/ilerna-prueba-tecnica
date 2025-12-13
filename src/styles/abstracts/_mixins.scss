@@ -13,7 +13,7 @@
 }
 
 @mixin tablet {
-  @media (min-width: #{v.$breakpoint-mobile}) and (max-width: #{v.$breakpoint-tablet - 1px}) {
+  @media (min-width: #{v.$breakpoint-mobile}) {
     @content;
   }
 }
@@ -57,7 +57,7 @@
 
 @mixin container {
   width: 100%;
-  max-width: v.$grid-container-max-width;
+  max-width: v.$grid-max-width;
   margin: 0 auto;
   padding: 0 v.$spacing-4;
 
@@ -128,10 +128,6 @@
   cursor: pointer;
   transition: all v.$transition-base v.$easing-out;
 
-  &:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
 
   &:disabled {
     opacity: 0.5;
