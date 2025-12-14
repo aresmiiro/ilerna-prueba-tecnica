@@ -1,0 +1,146 @@
+@use '../../../styles/abstracts/variables' as v;
+@use '../../../styles/abstracts/mixins' as m;
+@use '../../../styles/utilities/utilities' as *;
+
+.hero {
+  min-height: calc(100vh - 80px);
+  @extend .position-relative;
+  @extend .overflow-hidden;
+  @extend .pb-10;
+
+
+  @include m.desktop {
+    padding: v.$spacing-16 0;
+  }
+
+  &__container {
+    @include m.container;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__logo {
+    margin-top: 47px;
+    margin-bottom: 40px;
+    max-width: 83px;
+
+    @include m.desktop {
+      margin-bottom: 88px;
+      max-width: none;
+    }
+  }
+
+  &__grid {
+    @include m.grid-12;
+    align-items: start;
+    grid-template-columns: 1fr; 
+    gap: v.$spacing-10;
+
+    @include m.desktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1; // mobile
+
+    @include m.desktop {
+      grid-column: 1 / 8;
+    }
+  }
+
+  &__form-wrapper {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center; // mobile
+
+    @include m.desktop {
+      grid-column: 9 / 13;
+      justify-content: flex-end;
+    }
+  }
+
+  &__title {
+    margin-bottom: v.$spacing-6;
+    position: relative;
+
+    @include m.desktop {
+      margin-bottom: v.$spacing-8;
+    }
+  }
+
+  &__title-decoration {
+    @extend .position-relative;
+    @extend .d-inline-block;
+    z-index: 0;
+
+    &::before {
+      @extend .position-absolute;
+      @extend .d-inline-block;
+      content: "";
+      width: 104%;
+      height: 1.875rem;
+      background-color: v.$color-primary-light;
+      border-radius: v.$spacing-5;
+      z-index: -1;
+      left: -0.3125rem;
+      bottom: 0; // mobile default
+
+      @include m.desktop {
+        bottom: 0.75rem;
+      }
+    }
+  }
+
+  &__description {
+    font-size: v.$font-size-base; // mobile
+    margin-bottom: v.$spacing-6;
+
+    strong {
+      font-weight: v.$font-weight-bold;
+    }
+
+    @include m.desktop {
+      font-size: v.$font-size-md;
+    }
+  }
+
+  &__conditions-link {
+    background: none;
+    border: none;
+    color: v.$color-text-primary;
+    font-size: v.$font-size-base; // mobile
+    font-weight: v.$font-weight-medium;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    font-family: v.$font-primary;
+    transition: color v.$transition-base;
+    display: inline-block;
+    margin-top: v.$spacing-4;
+
+    &:hover {
+      color: v.$color-primary-dark;
+    }
+
+    @include m.desktop {
+      font-size: v.$font-size-md;
+    }
+  }
+
+  &__arrow {
+    @extend .d-none; // mobile hidden
+    @extend .position-absolute;
+    right: -3.75rem;
+    bottom: -3.75rem;
+    z-index: 0;
+
+    @include m.desktop {
+      display: block;
+    }
+
+    img {
+      @extend .d-block;
+    }
+  }
+}

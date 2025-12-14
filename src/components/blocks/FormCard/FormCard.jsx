@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Input from '../Input/Input';
-import Select from '../Select/Select';
-import Button from '../Button/Button';
+import Input from '../../elements/Input/Input';
+import Select from '../../elements/Select/Select';
+import Button from '../../elements/Button/Button';
 import './FormCard.scss';
 
 const FormCard = ({ onSubmit }) => {

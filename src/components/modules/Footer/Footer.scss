@@ -1,0 +1,487 @@
+@use '../../../styles/abstracts/variables' as v;
+@use '../../../styles/abstracts/mixins' as m;
+@use '../../../styles/utilities/utilities' as *;
+
+.footer {
+  @extend .p-0;
+  @extend .overflow-hidden;
+
+
+  &__container {
+    @include m.container;
+  }
+
+  &__header-section {
+    @extend .py-10;
+    @extend .pb-6;
+
+
+    @include m.tablet {
+      padding: v.$spacing-12 0 v.$spacing-8;
+    }
+
+    @include m.desktop {
+      padding: v.$spacing-16 0 v.$spacing-8;
+    }
+  }
+
+  &__white-section {
+    @extend .py-10;
+    @extend .pb-6;
+    @extend .bg-white;
+
+    @include m.tablet {
+      padding: v.$spacing-12 0 v.$spacing-8;
+    }
+
+    @include m.desktop {
+      padding: v.$spacing-16 0 v.$spacing-8;
+    }
+  }
+
+  &__white-container {
+    @include m.container;
+  }
+
+  &__contact-header {
+    @extend .mb-8;
+
+    @include m.desktop {
+      margin-bottom: 5.313rem;
+    }
+  }
+
+  &__contact-title {
+    @extend .mb-6;
+    @extend .font-weight-bold;
+    font-size: 1.75rem;
+    color: v.$color-text-primary;
+
+    @include m.tablet {
+      font-size: 2.25rem;
+      margin-bottom: v.$spacing-8;
+    }
+
+    @include m.desktop {
+      font-size: 2.813rem;
+      margin-bottom: v.$spacing-12;
+    }
+  }
+
+  &__contact-info {
+    @extend .d-flex; 
+    @extend .flex-column;
+    @extend .gap-4;
+    @extend .mb-10;
+
+    @include m.tablet {
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: v.$spacing-8;
+      @include m.flex-between;
+    }
+
+    @include m.desktop {
+      gap: v.$spacing-10;
+    }
+  }
+
+  &__contact-block {
+    @extend .d-flex;
+    @extend .flex-column;
+    @extend .gap-1;
+  }
+
+  &__contact-label {
+    @extend .text-primary;
+    font-size: 0.8125rem;
+
+    @include m.desktop {
+      font-size: v.$font-size-md;
+    }
+  }
+
+  &__contact-value {
+    @extend .m-0;
+    @extend .text-primary;
+    @extend .font-weight-semibold;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition: color v.$transition-base;
+
+    @include m.desktop {
+      font-size: v.$font-size-md;
+    }
+  }
+
+  a.footer__contact-value:hover {
+    font-weight: v.$font-weight-bold;
+  }
+
+  &__contact-social {
+    @extend .d-flex;
+    @extend .flex-column;
+    @extend .gap-4;;
+  }
+
+  &__contact-social-label {
+    @extend .text-primary;
+    font-size: 0.8125rem;
+
+    @include m.desktop {
+      font-size: v.$font-size-md;
+    }
+  }
+
+  &__contact-social-icons {
+    @extend .d-flex;
+    @extend .gap-2;
+  }
+
+  &__contact-social-link {
+    @extend .d-flex;
+    @extend .align-center;
+    @extend .justify-center;
+    @extend .text-primary;
+    transition: color v.$transition-base;
+
+    &:hover {
+      color: v.$color-primary-dark;
+    }
+
+    svg {
+      width: 21px;
+      height: 21px;
+    }
+  }
+
+  &__divider {
+    @extend .w-100;
+    height: 1px;
+    background-color: v.$black-dark;
+    margin-bottom: 3.125rem;
+  }
+
+  &__top {
+    @extend .mb-8;
+
+    @include m.desktop {
+      margin-bottom: v.$spacing-10;
+    }
+  }
+
+  &__logo-link {
+    @extend .mb-5;
+    @extend .d-block;
+
+    img {
+      @extend .h-auto;
+      max-width: 100px;
+    }
+
+    @include m.desktop {
+      margin-bottom: v.$spacing-6;
+
+      img {
+        max-width: 120px;
+      }
+    }
+  }
+
+  &__social-title {
+    @extend .mb-3;
+    @extend .font-weight-semibold;
+    @extend .text-primary;
+    font-family: v.$font-primary;
+    font-size: 0.9375rem;
+
+    @include m.desktop {
+      font-size: v.$font-size-base;
+    }
+  }
+
+  &__social-icons {
+    @extend .d-flex;
+    @extend .gap-2;
+
+    @include m.desktop {
+      gap: v.$spacing-3;
+    }
+  }
+
+  &__social-link {
+    @extend .d-flex;
+    @extend .align-center;
+    @extend .justify-center;
+    @extend .transition-base;
+    @extend .text-primary;
+
+    &:hover {
+      color: v.$color-primary-dark;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    @include m.desktop {
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+
+  &__content {
+    @extend .d-grid;
+    @extend .gap-8;;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include m.tablet {
+      gap: v.$spacing-10;
+
+  
+    }
+
+    @include m.desktop {
+      gap: v.$spacing-12;
+      margin-bottom: v.$spacing-10;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__section {
+    @extend .d-flex;
+    @extend .flex-column;
+  }
+
+  &__section-title {
+    @extend .mb-3;
+    @extend .font-weight-bold;
+    @extend .text-primary;
+    font-family: v.$font-primary;
+    font-size: v.$font-size-base;
+
+    &--mt {
+      @extend .mt-6;
+    }
+  }
+
+  &__links {
+    @extend .d-flex;
+    @extend .flex-column;
+    @extend .gap-2;
+  }
+
+  &__link {
+    @extend .text-primary;
+    font-family: v.$font-primary;
+    font-size: v.$font-size-base;
+    text-decoration: underline;
+    transition: color v.$transition-base;
+
+    &:hover {
+      font-weight: v.$font-weight-bold;
+    }
+  }
+
+  &__link-text {
+    @extend .text-primary;
+    font-family: v.$font-primary;
+    font-size: v.$font-size-base;
+  }
+
+  &__certifications-section {
+    @extend .mb-6;
+    @extend .d-flex;
+    @extend .flex-column;
+    @extend .gap-6;
+
+    @include m.tablet {
+      margin-bottom: v.$spacing-8;
+    }
+
+    @include m.desktop {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: v.$spacing-12;
+    }
+  }
+
+  &__authorizations {
+    @extend .flex-1;
+  }
+
+  &__auth-title {
+    @extend .mb-10;
+    @extend .font-weight-bold;
+    @extend .text-primary;
+    text-underline-offset: 10px;
+    font-size: v.$font-size-md;
+  
+
+    @include m.desktop {
+      font-size: 1.375rem;
+      text-decoration: underline;
+    }
+    span{
+      font-weight: v.$font-weight-regular !important;
+    }
+  }
+
+  &__auth-items {
+    @extend .d-grid;
+    @extend .gap-3;
+    grid-template-columns: 1fr;
+
+    @include m.tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: v.$spacing-4;
+    }
+
+    @include m.desktop {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__auth-item {
+    @extend .d-flex;
+    @extend .flex-column;
+    @extend .gap-2;
+    width: fit-content;
+  }
+
+  &__auth-logo {
+    @extend .mb-1;
+    height: 50px;
+    @extend .d-flex;
+    @extend .align-end;
+
+    img {
+      @extend .w-100;
+      max-height: 50px;
+      object-fit: contain;
+      object-position: left bottom;
+    }
+  }
+
+  &__auth-text {
+    p {
+      @extend .m-0;
+      @extend .mb-1;
+      @extend .text-primary;
+      font-family: v.$font-primary;
+      font-size: v.$font-size-xs;
+      line-height: 1.4;
+
+      @include m.desktop {
+        font-size: 0.6875rem;
+      }
+
+      &:last-child {
+        @extend .mb-0;
+      }
+    }
+  }
+
+  &__auth-link {
+    font-size : v.$font-size-xs;
+    text-decoration: none;
+
+    &:hover {
+      font-weight: v.$font-weight-bold;
+    }
+  }
+
+  &__certificates {
+    @extend .flex-none;
+
+    @include m.desktop {
+      max-width: 200px;
+    }
+  }
+
+ &__cert-title {
+    @extend .mb-10;
+    @extend .font-weight-bold;
+    font-size: v.$font-size-md;
+    text-underline-offset: 10px;
+
+
+    @include m.desktop {
+      font-size: 1.375rem;
+      text-decoration: underline;
+    }
+    span{
+      font-weight: v.$font-weight-regular !important;
+    }
+  }
+
+  &__cert-logos {
+    @extend .d-flex;
+    @extend .gap-2;
+    @extend .flex-wrap;
+
+    @include m.desktop {
+      flex-direction: column;
+      gap: v.$spacing-3;
+    }
+  }
+
+  &__cert-logo {
+    @extend .flex-auto;
+
+    img {
+      @extend .w-100;
+      @extend .h-auto;
+      max-width: 180px;
+      object-fit: contain;
+
+      @include m.desktop {
+        max-width: 200px;
+      }
+    }
+  }
+
+
+  // Parte inferior - Links legales
+  &__bottom {
+    @extend .d-flex;
+    @extend .justify-center;
+    @extend .py-3;
+
+    @include m.desktop {
+      padding: v.$spacing-4 0;
+    }
+  }
+
+  &__legal-links {
+    @extend .d-flex;
+    @extend .gap-3;
+    @extend .flex-wrap;
+    @extend .justify-center;
+    @extend .align-center;
+
+    @include m.desktop {
+      gap: v.$spacing-4;
+    }
+  }
+
+  &__legal-link {
+    @extend .text-secondary;
+    font-family: v.$font-secondary;
+    text-decoration: none;
+    transition: all v.$transition-base;
+    white-space: nowrap;
+
+    @include m.desktop {
+      font-size: v.$font-size-base;
+    }
+
+    &:hover {
+      font-weight: v.$font-weight-bold;
+    }
+  }
+}

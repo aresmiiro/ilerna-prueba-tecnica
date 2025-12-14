@@ -1,12 +1,12 @@
-@use "../../styles/abstracts/variables" as v;
-@use "../../styles/abstracts/mixins" as m;
-@use "../../styles/utilities/utilities" as *;
+@use "../../../styles/abstracts/variables" as v;
+@use "../../../styles/abstracts/mixins" as m;
+@use "../../../styles/utilities/utilities" as *;
 
 .form-card {
   @extend .w-100;
   @extend .position-relative;
   @extend .rounded-lg;
-  background: v.$white;
+  @extend .bg-white;
   padding: v.$spacing-8 v.$spacing-6;
   box-shadow: v.$shadow-card;
 
@@ -16,10 +16,9 @@
     max-width: 30rem;
   }
 
-  @include m.tablet {
+  @include m.desktop {
     &::after {
       content: "";
-      position: absolute;
       top: -20%;
       right: -2.5rem;
       width: 125%;
@@ -29,9 +28,9 @@
       background-position: center;
       background-repeat: no-repeat;
       transform: rotate(4deg);
-      pointer-events: none;
       opacity: 0.5;
       z-index: -1;
+      position: absolute;
     }
   }
 
@@ -61,15 +60,14 @@
     padding: v.$spacing-3 v.$spacing-4;
     margin-bottom: 2.25rem;
     &-text {
+      @extend .m-0;
+      @extend .text-secondary;
+      @extend .font-weight-normal;
       font-size: 0.8125rem;
       line-height: 1.45;
-      color: v.$color-text-secondary;
-      margin: 0;
       font-family: v.$font-primary;
-      font-weight: v.$font-weight-regular;
       max-height: 4.5rem;
       overflow-y: auto;
-      scrollbar-width: thin;
       scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
 
       &::-webkit-scrollbar {

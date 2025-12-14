@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, ChevronDown } from 'lucide-react';
-import Button from '../Button/Button';
+import Button from '../../elements/Button/Button';
 import './Header.scss';
 
 const Header = () => {

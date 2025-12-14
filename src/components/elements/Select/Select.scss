@@ -1,6 +1,6 @@
-@use '../../styles/abstracts/variables' as v;
-@use '../../styles/abstracts/mixins' as m;
-@use '../../styles/utilities/utilities' as *;
+@use '../../../styles/abstracts/variables' as v;
+@use '../../../styles/abstracts/mixins' as m;
+@use '../../../styles/utilities/utilities' as *;
 
 .select {
   @extend .d-flex;
@@ -21,13 +21,28 @@
   &__field {
     @include m.form-field-base;
     @extend .cursor-pointer;
-    padding-right: 40px;
+    padding-right: 48px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    height: auto;
+    min-height: 50px;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: visible;
+    line-height: 1.6;
 
     &::-ms-expand {
       display: none;
+    }
+
+    option {
+      padding: 12px 8px;
+      line-height: 1.8;
+      color: v.$color-text-primary;
+      font-size: v.$font-size-base;
     }
 
     option[value=""][disabled] {
@@ -37,7 +52,6 @@
     &:focus {
       box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
     }
-
 
     &:valid {
       color: v.$color-text-primary;

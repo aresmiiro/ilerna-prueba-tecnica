@@ -1,6 +1,6 @@
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import Home from './pages/Home/Home';
+import Header from './components/modules/Header/Header';
+import Footer from './components/modules/Footer/Footer';
+import Home from './components/templates/Home/Home';
 import './styles/globals.scss';
 
 function App() {

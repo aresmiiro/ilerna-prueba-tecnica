@@ -1,6 +1,6 @@
-@use '../../styles/abstracts/variables' as v;
-@use '../../styles/abstracts/mixins' as m;
-@use '../../styles/utilities/utilities' as *;
+@use '../../../styles/abstracts/variables' as v;
+@use '../../../styles/abstracts/mixins' as m;
+@use '../../../styles/utilities/utilities' as *;
 
 .btn {
   @include m.button-base;

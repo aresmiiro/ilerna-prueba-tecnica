@@ -1,6 +1,6 @@
-@use '../../styles/abstracts/variables' as v;
-@use '../../styles/abstracts/mixins' as m;
-@use '../../styles/utilities/utilities' as *;
+@use '../../../styles/abstracts/variables' as v;
+@use '../../../styles/abstracts/mixins' as m;
+@use '../../../styles/utilities/utilities' as *;
 
 .header {
   position: fixed;
@@ -99,11 +99,9 @@
     @extend .d-flex;
     @extend .align-center;
     @extend .transition-base;
-    font-size: v.$font-size-sm;
-    color: v.$color-text-primary;
+    font-size: v.$font-size-base;
+    font-weight: v.$font-weight-regular;
     text-decoration: none;
-    font-weight: v.$font-weight-medium;
-    font-family: v.$font-primary;
     gap: v.$spacing-1;
 
     &:hover {
