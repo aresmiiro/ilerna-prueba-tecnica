@@ -66,8 +66,8 @@
     right: v.$spacing-4;
     width: 2rem;
     height: 2rem;
-    background: transparent;
-    border: none;
+    @extend .bg-transparent;
+    @extend .border-none;
     font-size: 1.5rem;
     line-height: 1;
     color: v.$color-text-primary;
@@ -186,10 +186,10 @@
     }
 
     a {
-      text-decoration: none;
-      
+      @extend .text-decoration-none;
+
       &:hover {
-        text-decoration: underline;
+        @extend .text-decoration-underline;
       }
     }
   }

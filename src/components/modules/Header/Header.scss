@@ -70,7 +70,7 @@
   &__container {
     @include m.container;
     @include m.flex-between;
-    align-items: center;
+    @extend .align-center;
     padding: 0 v.$spacing-4;
 
     @include m.desktop {

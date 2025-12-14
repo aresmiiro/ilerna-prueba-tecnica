@@ -32,9 +32,9 @@
 
   &__grid {
     @include m.grid-12;
-    align-items: start;
-    grid-template-columns: 1fr; 
-    gap: v.$spacing-10;
+    @extend .align-start;
+    grid-template-columns: 1fr;
+    @extend .gap-10;
 
     @include m.desktop {
       grid-template-columns: repeat(12, 1fr);

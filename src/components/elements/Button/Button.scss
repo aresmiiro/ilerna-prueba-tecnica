@@ -5,7 +5,7 @@
 .btn {
   @include m.button-base;
   @extend .text-center;
-  border: none;
+  @extend .border-none;
   background: v.$black-dark;
   color: v.$white;
   font-size: v.$font-size-base;

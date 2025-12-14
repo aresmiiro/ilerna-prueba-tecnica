@@ -315,6 +315,7 @@
     text-underline-offset: 10px;
     font-size: v.$font-size-md;
     border-bottom: 1px solid black;
+    padding-bottom: 9px;
   
 
     @include m.desktop {
@@ -400,7 +401,8 @@
     @extend .mb-10;
     @extend .font-weight-bold;
     font-size: v.$font-size-md;
-       border-bottom: 1px solid black;
+    padding-bottom: 9px;
+    border-bottom: 1px solid black;
   
 
 
@@ -425,6 +427,7 @@
 
   &__cert-logo {
     @extend .flex-auto;
+    width: 115px;
 
     img {
       @extend .w-100;
@@ -454,7 +457,7 @@
     @extend .d-flex;
     @extend .gap-3;
     @extend .flex-wrap;
-    @extend .justify-center;
+    @extend .justify-between;
     @extend .align-center;
 
     @include m.desktop {
