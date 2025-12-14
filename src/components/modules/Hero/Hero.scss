@@ -42,6 +42,7 @@
   }
 
   &__content {
+    @extend .position-relative;
     grid-column: 1 / -1; // mobile
 
     @include m.desktop {
@@ -51,8 +52,8 @@
 
   &__form-wrapper {
     grid-column: 1 / -1;
-    display: flex;
-    justify-content: center; // mobile
+    @extend .d-flex;
+    @extend .justify-center; // mobile
 
     @include m.desktop {
       grid-column: 9 / 13;
@@ -61,8 +62,8 @@
   }
 
   &__title {
-    margin-bottom: v.$spacing-6;
-    position: relative;
+    @extend .mb-6;
+    @extend .position-relative;
 
     @include m.desktop {
       margin-bottom: v.$spacing-8;
@@ -94,10 +95,10 @@
 
   &__description {
     font-size: v.$font-size-base; // mobile
-    margin-bottom: v.$spacing-6;
+    @extend .mb-6;
 
     strong {
-      font-weight: v.$font-weight-bold;
+      @extend .font-weight-bold;
     }
 
     @include m.desktop {
@@ -106,18 +107,18 @@
   }
 
   &__conditions-link {
-    background: none;
-    border: none;
-    color: v.$color-text-primary;
+    @extend .bg-transparent;
+    @extend .border-none;
+    @extend .text-primary;
     font-size: v.$font-size-base; // mobile
-    font-weight: v.$font-weight-medium;
-    text-decoration: underline;
-    cursor: pointer;
-    padding: 0;
+    @extend .font-weight-medium;
+    @extend .text-decoration-underline;
+    @extend .cursor-pointer;
+    @extend .p-0;
     font-family: v.$font-primary;
     transition: color v.$transition-base;
-    display: inline-block;
-    margin-top: v.$spacing-4;
+    @extend .d-inline-block;
+    @extend .mt-4;
 
     &:hover {
       color: v.$color-primary-dark;

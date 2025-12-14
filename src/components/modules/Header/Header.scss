@@ -3,17 +3,17 @@
 @use '../../../styles/utilities/utilities' as *;
 
 .header {
-  position: fixed;
+  @extend .position-fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  @extend .w-100;
   background: v.$white;
   z-index: v.$z-index-header;
 
   &__top-bar {
     @extend .d-none;
     background: v.$black;
-    padding: v.$spacing-2 0;
+    @extend .py-2;
 
     @include m.desktop {
       display: block;
@@ -29,11 +29,8 @@
   }
 
   &__top-text {
-    font-family: v.$font-primary;
     font-size: v.$font-size-sm;
-    font-weight: v.$font-weight-regular;
     color: v.$white;
-    margin: 0;
   }
 
   &__top-phone {
@@ -48,7 +45,7 @@
     font-family: v.$font-primary;
     font-size: v.$font-size-sm;
     font-weight: v.$font-weight-semibold;
-    text-decoration: none;
+    @extend .text-decoration-none;
 
     &:hover {
       background: v.$color-primary-dark;
@@ -63,7 +60,7 @@
   &__main {
     background: v.$white;
     box-shadow: v.$shadow-base;
-    padding: v.$spacing-3 0;
+    @extend .py-3;
 
     @include m.desktop {
       padding: v.$spacing-4 0;
@@ -101,7 +98,7 @@
     @extend .transition-base;
     font-size: v.$font-size-base;
     font-weight: v.$font-weight-regular;
-    text-decoration: none;
+    @extend .text-decoration-none;
     gap: v.$spacing-1;
 
     &:hover {
@@ -126,10 +123,10 @@
     @extend .d-flex;
     @extend .flex-column;
     @extend .cursor-pointer;
-    background: none;
-    border: none;
-    padding: v.$spacing-2;
-    gap: v.$spacing-1;
+    @extend .bg-transparent;
+    @extend .border-none;
+    @extend .p-2;
+    @extend .gap-1;
 
     @include m.desktop {
       display: none;

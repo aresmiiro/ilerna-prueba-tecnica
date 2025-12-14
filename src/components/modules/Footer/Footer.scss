@@ -69,8 +69,7 @@
   }
 
   &__contact-info {
-    @extend .d-flex; 
-    @extend .flex-column;
+    @include m.flex-column;
     @extend .gap-4;
     @extend .mb-10;
 
@@ -87,8 +86,7 @@
   }
 
   &__contact-block {
-    @extend .d-flex;
-    @extend .flex-column;
+    @include m.flex-column;
     @extend .gap-1;
   }
 
@@ -106,8 +104,8 @@
     @extend .text-primary;
     @extend .font-weight-semibold;
     font-size: 0.9375rem;
-    text-decoration: none;
-    transition: color v.$transition-base;
+    @extend .transition-base;
+    @extend .text-decoration-none;
 
     @include m.desktop {
       font-size: v.$font-size-md;
@@ -119,9 +117,8 @@
   }
 
   &__contact-social {
-    @extend .d-flex;
-    @extend .flex-column;
-    @extend .gap-4;;
+    @include m.flex-column;
+    @extend .gap-4;
   }
 
   &__contact-social-label {
@@ -143,7 +140,7 @@
     @extend .align-center;
     @extend .justify-center;
     @extend .text-primary;
-    transition: color v.$transition-base;
+    @extend .transition-base;
 
     &:hover {
       color: v.$color-primary-dark;
@@ -253,8 +250,7 @@
   }
 
   &__section {
-    @extend .d-flex;
-    @extend .flex-column;
+    @include m.flex-column;
   }
 
   &__section-title {
@@ -270,17 +266,16 @@
   }
 
   &__links {
-    @extend .d-flex;
-    @extend .flex-column;
+    @include m.flex-column;
     @extend .gap-2;
   }
 
   &__link {
     @extend .text-primary;
+    @extend .transition-base;
     font-family: v.$font-primary;
     font-size: v.$font-size-base;
-    text-decoration: underline;
-    transition: color v.$transition-base;
+    @extend .text-decoration-underline;
 
     &:hover {
       font-weight: v.$font-weight-bold;
@@ -294,9 +289,8 @@
   }
 
   &__certifications-section {
+    @include m.flex-column;
     @extend .mb-6;
-    @extend .d-flex;
-    @extend .flex-column;
     @extend .gap-6;
 
     @include m.tablet {
@@ -320,11 +314,11 @@
     @extend .text-primary;
     text-underline-offset: 10px;
     font-size: v.$font-size-md;
+    border-bottom: 1px solid black;
   
 
     @include m.desktop {
       font-size: 1.375rem;
-      text-decoration: underline;
     }
     span{
       font-weight: v.$font-weight-regular !important;
@@ -347,8 +341,7 @@
   }
 
   &__auth-item {
-    @extend .d-flex;
-    @extend .flex-column;
+    @include m.flex-column;
     @extend .gap-2;
     width: fit-content;
   }
@@ -388,7 +381,7 @@
 
   &__auth-link {
     font-size : v.$font-size-xs;
-    text-decoration: none;
+    @extend .text-decoration-none;
 
     &:hover {
       font-weight: v.$font-weight-bold;
@@ -396,8 +389,8 @@
   }
 
   &__certificates {
-    @extend .flex-none;
-
+     @extend .flex-1;
+     
     @include m.desktop {
       max-width: 200px;
     }
@@ -407,12 +400,12 @@
     @extend .mb-10;
     @extend .font-weight-bold;
     font-size: v.$font-size-md;
-    text-underline-offset: 10px;
+       border-bottom: 1px solid black;
+  
 
 
     @include m.desktop {
       font-size: 1.375rem;
-      text-decoration: underline;
     }
     span{
       font-weight: v.$font-weight-regular !important;
@@ -471,9 +464,9 @@
 
   &__legal-link {
     @extend .text-secondary;
+    @extend .transition-base;
     font-family: v.$font-secondary;
-    text-decoration: none;
-    transition: all v.$transition-base;
+    @extend .text-decoration-none;
     white-space: nowrap;
 
     @include m.desktop {

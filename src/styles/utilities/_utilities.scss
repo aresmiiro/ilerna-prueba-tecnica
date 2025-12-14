@@ -3,8 +3,6 @@
 
 // UTILITIES
 
-// Spacing utilities (importadas desde archivo separado)
-
 
 // Display utilities
 .d-none { display: none; }
@@ -115,19 +113,6 @@
 .shadow-lg { box-shadow: v.$shadow-lg; }
 .shadow-none { box-shadow: none; }
 
-// Screen reader only utility
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
 // Aspect ratio utilities
 .ratio-1-1 { aspect-ratio: 1 / 1; }
 .ratio-16-9 { aspect-ratio: 16 / 9; }
@@ -153,3 +138,13 @@
 // Pointer events utilities
 .pe-none { pointer-events: none; }
 .pe-auto { pointer-events: auto; }
+
+// Border utilities
+.border-none { border: none; }
+
+// Background utilities
+.bg-transparent { background: transparent; }
+
+// Text decoration utilities
+.text-decoration-none { text-decoration: none; }
+.text-decoration-underline { text-decoration: underline; }

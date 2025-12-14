@@ -4,10 +4,10 @@
 
 .btn {
   @include m.button-base;
+  @extend .text-center;
   border: none;
   background: v.$black-dark;
   color: v.$white;
-  text-align: center;
   font-size: v.$font-size-base;
 
   &:hover:not(:disabled) {
@@ -19,13 +19,13 @@
   }
 
   &:disabled {
+    @extend .cursor-not-allowed;
+    @extend .shadow-none;
     background-color: v.$gray-200;
-    cursor: not-allowed;
     opacity: 0.6;
 
     &:hover {
       transform: none;
-      box-shadow: none;
     }
   }
 

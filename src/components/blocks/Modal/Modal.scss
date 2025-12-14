@@ -11,7 +11,7 @@
   left: 0;
   background: rgba(0, 0, 0, 0.5);
   @include m.flex-center;
-  padding: v.$spacing-4;
+  @extend .p-4;
   animation: fadeIn 0.2s ease-out;
 
   @keyframes fadeIn {
@@ -61,6 +61,7 @@
     @extend .justify-center;
     @extend .cursor-pointer;
     @extend .rounded-circle;
+    @extend .p-0;
     top: v.$spacing-4;
     right: v.$spacing-4;
     width: 2rem;
@@ -71,7 +72,6 @@
     line-height: 1;
     color: v.$color-text-primary;
     transition: background-color v.$transition-fast;
-    padding: 0;
 
     &:hover {
       background-color: rgba(0, 0, 0, 0.05);
@@ -98,10 +98,10 @@
   &__body {
     @extend .text-primary;
     @extend .flex-1;
-    margin: 0 v.$spacing-5  v.$spacing-4 v.$spacing-4 ;
-    padding-right: v.$spacing-3; 
+    @extend .overflow-auto;
+    @extend .pr-3;
+    margin: 0 v.$spacing-5 v.$spacing-4 v.$spacing-4;
     font-size: v.$font-size-md;
-    overflow-y: auto;
     font-family: v.$font-primary;
   
     &::-webkit-scrollbar {
@@ -138,9 +138,9 @@
   &__title {
     @extend .mb-4;
     @extend .font-weight-bold;
+    @extend .pr-6;
     font-size: v.$font-size-xl;
-    color: v.$color-text-primary;;
-    padding-right: v.$spacing-6;
+    color: v.$color-text-primary;
 
     @include m.desktop {
       margin-bottom: 0;
@@ -156,7 +156,7 @@
     }
 
     &:last-of-type {
-      margin-bottom: 0;
+      @extend .mb-0;
     }
 
     &-title {

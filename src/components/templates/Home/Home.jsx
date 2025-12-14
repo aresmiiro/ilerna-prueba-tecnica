@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Hero from '../../modules/Hero/Hero';
 import Modal from '../../blocks/Modal/Modal';
-import './Home.scss';
+
 
 const Home = () => {
   const [showModal, setShowModal] = useState(false);
