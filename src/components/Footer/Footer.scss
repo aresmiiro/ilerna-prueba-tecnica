@@ -1,9 +1,9 @@
 @use '../../styles/abstracts/variables' as v;
 @use '../../styles/abstracts/mixins' as m;
+@use '../../styles/utilities/utilities' as *;
 
 .footer {
   background: #f5f5f5;
-  margin-top: v.$spacing-20;
   padding: v.$spacing-16 0 v.$spacing-8;
 
   &__container {
@@ -12,94 +12,91 @@
   }
 
   &__top {
-    margin-bottom: v.$spacing-12;
+    @extend .mb-10;
   }
+  
 
-  &__logo {
-    font-family: v.$font-primary;
-    font-size: 24px;
-    font-weight: v.$font-weight-bold;
-    color: v.$color-text-primary;
-    margin-bottom: v.$spacing-6;
-    display: block;
+  &__logo-link {
+    @extend .mb-6;
+    @extend .d-block;
+    @extend .mb-6;
+  
+  
   }
 
   &__social-title {
-    font-family: v.$font-primary;
-    font-size: v.$font-size-base;
-    font-weight: v.$font-weight-semibold;
-    color: v.$color-text-primary;
-    margin-bottom: v.$spacing-4;
+    @extend .font-weight-semibold;
+    @extend .mb-3;
+    font-size: v.$font-size-lg;
+
   }
 
   &__social-icons {
-    display: flex;
-    gap: v.$spacing-4;
+    @extend .d-flex;
+    @extend .gap-3;
   }
 
   &__social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    color: v.$color-text-primary;
-    transition: all v.$transition-base v.$easing-in-out;
+    @extend .d-flex;
+    @extend .align-center;
+    @extend .justify-center;
+    @extend .transition-base;
 
     &:hover {
       color: v.$color-primary-dark;
     }
 
     svg {
-      width: 20px;
+      width: 21px;
       height: 20px;
     }
   }
 
   &__content {
-    display: grid;
+    @extend .d-grid;
+    @extend .gap-8;
+    @extend .mb-12;
     grid-template-columns: 1fr;
-    gap: v.$spacing-8;
-    margin-bottom: v.$spacing-12;
 
     @include m.tablet {
-      grid-template-columns: repeat(2, 1fr);
       gap: v.$spacing-10;
+      grid-template-columns: repeat(2, 1fr);
     }
 
     @include m.desktop {
-      grid-template-columns: repeat(4, 1fr);
       gap: v.$spacing-12;
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 
   &__section {
-    display: flex;
-    flex-direction: column;
+    @extend .d-flex;
+    @extend .flex-column;
   }
 
   &__section-title {
+    @extend .mb-2;
+    @extend .font-weight-bold;
     font-family: v.$font-primary;
     font-size: v.$font-size-base;
-    font-weight: v.$font-weight-bold;
     color: v.$color-text-primary;
-    margin-bottom: v.$spacing-5;
+
+    &--spaced {
+      margin-top: 24px;
+    }
   }
 
   &__links {
-    display: flex;
-    flex-direction: column;
-    gap: v.$spacing-3;
+    @extend .d-flex;
+    @extend .flex-column;
+    @extend .gap-3;
   }
 
   &__link {
     font-family: v.$font-primary;
     font-size: v.$font-size-sm;
-    font-weight: v.$font-weight-regular;
     color: v.$color-text-primary;
     text-decoration: underline;
-    text-decoration-skip-ink: none;
-    text-underline-position: from-font;
     transition: color v.$transition-base v.$easing-in-out;
 
     &:hover {
@@ -107,33 +104,82 @@
     }
   }
 
-  &__contact-item {
-    margin-bottom: v.$spacing-3;
-  }
 
   &__contact-label {
-    font-family: v.$font-primary;
+    @extend .m-0;
+    @extend .d-block;
     font-size: v.$font-size-sm;
-    font-weight: v.$font-weight-regular;
-    color: v.$color-text-primary;
-    margin: 0;
-    display: block;
   }
 
   &__contact-value {
+    @extend .m-0;
+    @extend .d-block;
+    @extend .transition-base;
     font-family: v.$font-primary;
-    font-size: v.$font-size-base;
-    font-weight: v.$font-weight-semibold;
-    color: v.$color-text-primary;
-    margin: 0;
-    display: block;
-    text-decoration: underline;
-    text-decoration-skip-ink: none;
-    text-underline-position: from-font;
-    transition: color v.$transition-base v.$easing-in-out;
+    font-size: v.$font-size-sm;
+
 
     &:hover {
-      color: #87ceeb;
+       font-weight: v.$font-weight-bold
+    }
+  }
+
+  &__contact-header {
+    @extend .mb-8;
+  }
+
+  &__contact-title {
+    @extend .mb-4;
+    font-size: v.$font-size-xl;
+    font-weight: v.$font-weight-bold;
+  }
+
+  &__contact-info {
+    @extend .d-grid;
+    @extend .gap-6;
+    margin-bottom: v.$spacing-4;
+
+    @include m.tablet {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__contact-block {
+    @extend .d-flex;
+    @extend .flex-column;
+    gap: v.$spacing-1;
+  }
+
+  &__contact-social {
+    @extend .d-flex;
+    @extend .align-center;
+    @extend .gap-4;
+    margin-top: v.$spacing-4;
+  }
+
+  &__contact-social-label {
+    font-size: v.$font-size-sm;
+    font-weight: v.$font-weight-regular;
+  }
+
+  &__contact-social-icons {
+    @extend .d-flex;
+    @extend .gap-3;
+  }
+
+  &__contact-social-link {
+    @extend .d-flex;
+    @extend .align-center;
+    @extend .justify-center;
+    transition: color v.$transition-base;
+
+    &:hover {
+      color: v.$color-primary-dark;
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
     }
   }
 
@@ -145,17 +191,17 @@
   }
 
   &__bottom {
-    display: flex;
-    justify-content: center;
+    @extend .d-flex;
+    @extend .justify-center;
     padding: v.$spacing-4 0;
   }
 
   &__legal-links {
-    display: flex;
-    gap: v.$spacing-5;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    @extend .d-flex;
+    @extend .gap-5;
+    @extend .flex-wrap;
+    @extend .justify-center;
+    @extend .align-center;
   }
 
   &__legal-link {

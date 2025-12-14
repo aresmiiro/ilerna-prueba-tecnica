@@ -1,15 +1,14 @@
 @use '../../styles/abstracts/variables' as v;
 @use '../../styles/abstracts/mixins' as m;
+@use '../../styles/utilities/utilities' as *;
 
 .btn {
   @include m.button-base;
   border: none;
-  background: v.$color-text-primary;
+  background: v.$black-dark;
   color: v.$white;
-  font-size: v.$font-size-md;
-  font-weight: v.$font-weight-bold;
   text-align: center;
-  line-height: normal;
+  font-size: v.$font-size-base;
 
   &:hover:not(:disabled) {
     background: v.$color-primary-dark;
@@ -52,18 +51,18 @@
   }
 
   &--full-width {
-    width: 100%;
+    @extend .w-100;
   }
 
   &--small {
     height: 2.75rem;
     padding: v.$spacing-3 v.$spacing-6;
-    font-size: v.$font-size-sm;  // Solo sobreescribe el tamaño
+    font-size: v.$font-size-sm !important;
   }
 
   &--large {
     height: 4rem;
     padding: v.$spacing-5 v.$spacing-10;
-    font-size: v.$font-size-lg;  // Solo sobreescribe el tamaño
+    font-size: v.$font-size-lg;  
   }
 }

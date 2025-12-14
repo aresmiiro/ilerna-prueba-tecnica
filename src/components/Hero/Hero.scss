@@ -1,5 +1,6 @@
 @use '../../styles/abstracts/variables' as v;
 @use '../../styles/abstracts/mixins' as m;
+@use '../../styles/utilities/utilities' as *;
 
 .hero {
   @include m.container;
@@ -7,20 +8,15 @@
   padding: v.$spacing-12 0;
   position: relative;
   overflow: hidden;
-  margin-top: 50px;
-  @include m.desktop {
-      margin-top: 121px;
-  }
-  @include m.desktop {
-    padding: v.$spacing-16 0;
-  }
+
 
 
   &__logo {
+    @extend .mb-10;
     max-width: 155px;
-   margin-bottom: v.$spacing-10;
+
     @include m.desktop {
-       margin-bottom: v.$spacing-20;
+      margin-bottom: v.$spacing-20;
     }
   }
 
@@ -56,7 +52,7 @@
   }
 
   &__title {
-    margin-bottom: v.$spacing-6;
+    @extend .mb-6;
     position: relative;
 
     @include m.desktop {
@@ -84,10 +80,10 @@
   }
 
   &__description {
+    @extend .mb-6;
     font-size: v.$font-size-base;
     line-height: v.$line-height-normal;
     color: v.$color-text-primary;
-    margin-bottom: v.$spacing-6;
     font-family: v.$font-primary;
 
     strong {
@@ -100,18 +96,13 @@
   }
 
   &__conditions-link {
-    background: none;
-    border: none;
+    @extend .cursor-pointer;
+    @extend .d-inline-block;
     color: v.$color-text-primary;
     font-size: v.$font-size-base;
     font-weight: v.$font-weight-medium;
     text-decoration: underline;
-    cursor: pointer;
-    padding: 0;
-    font-family: v.$font-primary;
     transition: color v.$transition-base;
-    display: inline-block;
-    margin-top: v.$spacing-4;
 
     &:hover {
       color: v.$color-primary-dark;
@@ -123,8 +114,8 @@
   }
 
   &__arrow {
-    display: none;
-    position: absolute;
+    @extend .d-none;
+    @extend .position-absolute;
     right: -3.75rem;
     bottom: -3.75rem;
     z-index: 0;
@@ -134,7 +125,7 @@
     }
 
     img {
-      display: block;
+      @extend .d-block;
     }
   }
 }

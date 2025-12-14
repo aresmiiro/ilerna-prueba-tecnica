@@ -1,15 +1,51 @@
 import React from 'react';
-import { Facebook, Instagram, Twitter, Youtube, Linkedin, Phone } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Youtube, Linkedin, Phone, MapPin } from 'lucide-react';
 import './Footer.scss';
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__container">
-        {/* Logo y redes sociales */}
+        <div className="footer__contact-header">
+          <h2 className="footer__contact-title">Contacto</h2>
+          <div className="footer__contact-info">
+            <div className="footer__contact-block">
+              <p className="footer__contact-label">Teléfono:</p>
+              <a href="tel:910841672" className="footer__contact-value">910 84 16 72</a>
+            </div>
+            <div className="footer__contact-block">
+              <p className="footer__contact-label">E-mail:</p>
+              <a href="mailto:info@ilernamadrid.com" className="footer__contact-value">info@ilernamadrid.com</a>
+            </div>
+            <div className="footer__contact-block">
+              <p className="footer__contact-label">Horario del centro:</p>
+              <p className="footer__contact-value">De lunes a viernes de 9:00h a 20:00h</p>
+            </div>
+          </div>
+          <div className="footer__contact-social">
+            <p className="footer__contact-social-label">Redes sociales:</p>
+            <div className="footer__contact-social-icons">
+              <a href="#" className="footer__contact-social-link" aria-label="Facebook">
+                <Facebook size={14} />
+              </a>
+              <a href="#" className="footer__contact-social-link" aria-label="Instagram">
+                <Instagram size={14} />
+              </a>
+              <a href="#" className="footer__contact-social-link" aria-label="Twitter">
+                <Twitter size={14} />
+              </a>
+              <a href="#" className="footer__contact-social-link" aria-label="YouTube">
+                <Youtube size={14} />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="footer__divider"></div>
         <div className="footer__top">
-          <div className="footer__logo">iLERNA</div>
-          
+            <a href="/" className="footer__logo-link">
+              <img src="/assets/images/logo-ilerna.svg" alt="iLERNA" />
+            </a>
           <p className="footer__social-title">Síguenos</p>
           <div className="footer__social-icons">
             <a href="#" className="footer__social-link" aria-label="Facebook">
@@ -21,7 +57,10 @@ const Footer = () => {
             <a href="#" className="footer__social-link" aria-label="Twitter">
               <Twitter size={20} />
             </a>
-            <a href="#" className="footer__social-link" aria-label="YouTube">
+            <a href="#" className="footer__social-link" aria-label="Pinterest">
+              <MapPin size={20} />
+            </a>
+            <a href="#" className="footer__social-link" aria-label="Spotify">
               <Youtube size={20} />
             </a>
             <a href="#" className="footer__social-link" aria-label="LinkedIn">
@@ -29,10 +68,7 @@ const Footer = () => {
             </a>
           </div>
         </div>
-
-        {/* Contenido principal - 4 columnas */}
         <div className="footer__content">
-          {/* Columna 1: Contacto */}
           <div className="footer__section">
             <h3 className="footer__section-title">Contacto</h3>
             <div className="footer__links">
@@ -72,8 +108,6 @@ const Footer = () => {
               <a href="#" className="footer__link">FP Cádiz</a>
             </div>
           </div>
-
-          {/* Columna 3: Grados de FP */}
           <div className="footer__section">
             <h3 className="footer__section-title">Grados de FP</h3>
             <div className="footer__links">
@@ -90,8 +124,6 @@ const Footer = () => {
               <a href="#" className="footer__link">CSO para adultos</a>
             </div>
           </div>
-
-          {/* Columna 4: Familias FP */}
           <div className="footer__section">
             <h3 className="footer__section-title">Familias FP</h3>
             <div className="footer__links">
@@ -108,8 +140,6 @@ const Footer = () => {
         </div>
 
         <div className="footer__divider"></div>
-
-        {/* Parte inferior */}
         <div className="footer__bottom">
           <div className="footer__legal-links">
             <a href="#" className="footer__legal-link">Promociones</a>

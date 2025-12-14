@@ -136,8 +136,8 @@ const FormCard = ({ onSubmit }) => {
             error={errors.ciclo}
             required
           />
-
-          <div className={'form-card__legal'}>
+        </div>
+         <div className={'form-card__legal'}>
             <p className={'form-card__legal-text'}>
               <strong>ILERNA Online SL.</strong> tratará tus datos personales conforme a tu
               solicitud para contactar e informarle del programa, curso.tratará tus datos personales conforme a tu
@@ -145,7 +145,6 @@ const FormCard = ({ onSubmit }) => {
               solicitud para contactar e informarle del programa, curso.
             </p>
           </div>
-        </div>
 
         <Button fullWidth onClick={handleSubmit}>
           Solicitar información

@@ -63,7 +63,6 @@ const Select = ({
           ))}
         </select>
         
-        {/* Icono de doble flecha */}
         <DoubleArrowIcon />
       </div>
 

@@ -64,7 +64,6 @@ const Home = () => {
             Bases legales de la promoción "Referidos" iLERNA Online
           </h2>
         </div>
-        {/* Body con contenido */}
         <div className="modal__body">
           <div className="modal__section">
             <p className="modal__section-title">
@@ -208,8 +207,6 @@ const Home = () => {
             </p>
           </div>
         </div>
-
-        {/* Footer celeste */}
         <div className="modal__footer">
           <p>
             ¿Tienes alguna duda? Llámanos sin compromiso al{' '}

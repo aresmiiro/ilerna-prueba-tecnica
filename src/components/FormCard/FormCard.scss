@@ -1,14 +1,14 @@
-@use '../../styles/abstracts/variables' as v;
-@use '../../styles/abstracts/mixins' as m;
+@use "../../styles/abstracts/variables" as v;
+@use "../../styles/abstracts/mixins" as m;
+@use "../../styles/utilities/utilities" as *;
 
 .form-card {
+  @extend .w-100;
+  @extend .position-relative;
+  @extend .rounded-lg;
   background: v.$white;
-  border-radius: v.$radius-lg;
   padding: v.$spacing-8 v.$spacing-6;
   box-shadow: v.$shadow-card;
-  width: 100%;
-  
-  position: relative;
 
   @include m.desktop {
     padding: v.$spacing-10 v.$spacing-8;
@@ -18,32 +18,13 @@
 
   @include m.tablet {
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: -20%;
       right: -2.5rem;
       width: 125%;
       height: 100%;
-      background-image: url('/assets/images/form-decoration.svg');
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      transform: rotate(4deg);
-      pointer-events: none;
-      opacity: 0.5;
-      z-index: -1;
-    }
-  }
-
-  @include m.desktop {
-    &::after {
-      content: '';
-      position: absolute;
-      top: -20%;
-      right: -2.5rem;
-      width: 125%;
-      height: 100%;
-      background-image: url('/assets/images/form-decoration.svg');
+      background-image: url("/assets/images/form-decoration.svg");
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
@@ -55,38 +36,30 @@
   }
 
   &__container {
-    position: relative;
+    @extend .position-relative;
     z-index: 1;
   }
 
   &__title {
-    font-family: v.$font-primary;
+    @extend .mb-8;
+    @extend .text-left;
+    @extend .font-weight-semibold;
     font-size: v.$font-size-xl;
-    font-weight: v.$font-weight-bold;
-    color: v.$color-text-primary;
-    margin-bottom: v.$spacing-6;
-    line-height: v.$line-height-tight;
-    text-align: left;
-
-    @include m.desktop {
-      font-size: 1.75rem;
-      margin-bottom: v.$spacing-8;
-    }
   }
 
   &__fields {
-    display: flex;
-    flex-direction: column;
-    gap: v.$spacing-5;
-    margin-bottom: v.$spacing-6;
+    @extend .d-flex;
+    @extend .flex-column;
+    @extend .mb-6;
+    @extend .gap-6;
+    margin-bottom: 1.813rem;
   }
 
   &__legal {
+    @extend .rounded-lg;
     background-color: v.$color-bg-legal;
-    border-radius: v.$radius-lg;
     padding: v.$spacing-3 v.$spacing-4;
-    margin-bottom: v.$spacing-6;
-
+    margin-bottom: 2.25rem;
     &-text {
       font-size: 0.8125rem;
       line-height: 1.45;
