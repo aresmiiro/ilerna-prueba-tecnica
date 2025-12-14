@@ -1,9 +1,6 @@
-// ============================================
 // VARIABLES - Sistema de diseño
-// ============================================
 
 // COLORES
-// ============================================
 $color-primary: #48b9ce;
 $color-primary-dark: #00808d;
 $color-primary-light: #bfeaf1;
@@ -32,9 +29,9 @@ $color-bg-primary: #f8f9fa;
 
 
 // TIPOGRAFÍA
-// ============================================
-$font-primary: 'Nunito', sans-serif;
-$font-secondary: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Inter' sans-serif;
+
+$font-primary: 'Poppins', sans-serif;
+$font-secondary: 'Nunito', sans-serif;
 
 $font-size-xs: 0.75rem;
 $font-size-sm: 0.875rem;
@@ -45,7 +42,7 @@ $font-size-xl: 1.5rem;
 $font-size-2xl: 2rem;
 $font-size-3xl: 2.5rem;
 $font-size-4xl: 3rem;
-$font-size-5xl: 3.625rem;
+$font-size-5xl: 3.3rem;
 
 $font-weight-regular: 400;
 $font-weight-medium: 500;
@@ -57,7 +54,7 @@ $line-height-normal: 1.5;
 $line-height-relaxed: 1.8;
 
 // SPACING (Sistema de 8px)
-// ============================================
+
 $spacing-1: 4px;
 $spacing-2: 8px;
 $spacing-3: 12px;
@@ -68,12 +65,11 @@ $spacing-8: 32px;
 $spacing-10: 40px;
 $spacing-12: 48px;
 $spacing-16: 64px;
-$spacing-20: 80px;
+$spacing-20: 89px;
 $spacing-24: 96px;
 $spacing-form-gap: 24px;
 
 // BREAKPOINTS
-// ============================================
 $breakpoint-mobile: 768px;
 $breakpoint-tablet: 1024px;
 $breakpoint-desktop: 1280px;
@@ -85,7 +81,6 @@ $breakpoints: (
 );
 
 // SOMBRAS
-// ============================================
 $shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
 $shadow-base: 0 2px 4px rgba(0, 0, 0, 0.1);
 $shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -95,7 +90,6 @@ $shadow-card: 0px 10px 30px 0px rgba(0, 0, 0, 0.15);
 $shadow-dropdown: 0 4px 12px rgba(0, 0, 0, 0.15);
 
 // BORDES
-// ============================================
 $border-width-base: 2px;
 $border-width-thick: 3px;
 $radius-sm: 4px;
@@ -106,7 +100,6 @@ $radius-xl: 24px;
 $radius-pill: 100px;
 
 // TRANSICIONES
-// ============================================
 $transition-fast: 150ms;
 $transition-base: 250ms;
 $transition-slow: 350ms;
@@ -115,7 +108,6 @@ $easing-out: ease-out;
 $easing-in-out: ease-in-out;
 
 // Z-INDEX
-// ============================================
 $z-index-dropdown: 1000;
 $z-index-sticky: 1020;
 $z-index-header: 1030;
@@ -125,13 +117,11 @@ $z-index-popover: 1060;
 $z-index-tooltip: 1070;
 
 // GRID
-// ============================================
 $grid-columns: 12;
 $grid-gap: 24px;
 $grid-max-width: 1200px;
 
 // COMPONENTES
-// ============================================
 $button-height: 56px;
 $button-padding-y: 1px;
 $button-padding-x: 32px;

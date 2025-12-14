@@ -60,7 +60,7 @@ const Home = () => {
 
       <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
         <div className="modal__header">
-          <h2 className="modal__title" id="modal-title">
+          <h2 className="modal__title">
             Bases legales de la promoción "Referidos" iLERNA Online
           </h2>
         </div>

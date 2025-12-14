@@ -2,30 +2,25 @@
 @use '../../styles/abstracts/mixins' as m;
 
 .hero {
-  min-height: calc(100vh - 5rem);
+  @include m.container;
   background: v.$color-bg-primary;
   padding: v.$spacing-12 0;
   position: relative;
   overflow: hidden;
   margin-top: 50px;
- @include m.desktop {
+  @include m.desktop {
       margin-top: 121px;
   }
   @include m.desktop {
     padding: v.$spacing-16 0;
   }
 
-  &__container {
-    @include m.container;
-    position: relative;
-    z-index: 1;
-  }
 
   &__logo {
     max-width: 155px;
-    margin-bottom: 56px;
+   margin-bottom: v.$spacing-10;
     @include m.desktop {
-        margin-bottom: 88px;
+       margin-bottom: v.$spacing-20;
     }
   }
 
@@ -36,8 +31,7 @@
     gap: v.$spacing-8;
 
     @include m.desktop {
-      grid-template-columns: repeat(12, 1fr);
-      gap: v.$grid-gap;
+      @include m.grid-12;
     }
   }
 
@@ -46,7 +40,7 @@
     position: relative;
 
     @include m.desktop {
-      grid-column: 1 / 8;
+      @include m.grid-column(7, 1);
     }
   }
 
@@ -56,7 +50,7 @@
     justify-content: center;
 
     @include m.desktop {
-      grid-column: 9 / 13;
+      @include m.grid-column(4, 9);
       justify-content: flex-end;
     }
   }
